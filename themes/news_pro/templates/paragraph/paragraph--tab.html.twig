@@ -1,0 +1,39 @@
+<div id="home-2-treding-news">	
+	<div class="sidebar-treding-news">
+		{% if content.field_title.0 %}
+			<div class="section-title">
+				<h2 class="text-center text-white">{{content.field_title.0}}</h2>
+			</div>
+		{% endif %}
+		<div class="tab-style-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+			<ul class="nav nav-tabs text-center" role="tablist">
+			{% for key, item in paragraph.field_tab_list %}
+				{% if loop.first %}
+					{% set active = 'active' %}
+					{% set areaselected = 'true' %}
+				{% else %}
+					{% set active = '' %}
+					{% set areaselected = 'false' %}
+				{% endif %}
+				<li class="nav-item" role="presentation">
+					<button class="nav-link {{active}}" id="nav-{{content.field_tab_list[key]['#paragraph'].id[0].value}}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{content.field_tab_list[key]['#paragraph'].id[0].value}}" type="button" role="tab" aria-controls="nav-{{content.field_tab_list[key]['#paragraph'].id[0].value}}" aria-selected="{{areaselected}}">{{ item.entity.field_title.value }}</button>
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+		<div class="tab-style-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;"> 
+			<div class="tab-content">
+			{% for key, item in paragraph.field_tab_list %}
+				{% if loop.first %}
+					{% set show = 'show active' %}
+				{% else %}
+					{% set show = '' %}
+				{% endif %}
+					<div class="tab-pane fade {{show}}" id="nav-{{content.field_tab_list[key]['#paragraph'].id[0].value}}" role="tabpanel" aria-labelledby="nav-{{content.field_tab_list[key]['#paragraph'].id[0].value}}-tab">
+					{{ content.field_tab_list[key] }}
+					</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>

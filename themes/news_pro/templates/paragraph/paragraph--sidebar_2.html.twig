@@ -1,0 +1,32 @@
+<div class="sidebar-block">
+	{% if paragraph.field_title_style.value == 'style-1' %}
+		{% if content.field_title.0 %}
+			<h3>{{content.field_title.0}}</h3>
+		{% endif %}
+	{% elseif paragraph.field_title_style.value == 'style-2' %}
+		{% if content.field_title.0 %}
+			<h3>{{content.field_title.0}}</h3>
+		{% endif %}
+	{% elseif paragraph.field_title_style.value == 'style-3' %}
+		{% if content.field_title.0 %}
+			<h3>{{content.field_title.0}}</h3>
+		{% endif %}
+	{% else %}
+		<div class="home-4">
+			{% if content.field_title.0 %}
+				<div class="tab-style-1-wapper">
+					<div class="home-4-title wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+						<h2>{{content.field_title.0}}</h2>
+					</div>
+				</div>
+				<div>
+					<hr>
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+	{{ content.field_main_content }}
+	{% if content.field_link.0['#url'] %}
+		<a href="{{ content.field_link.0['#url'] }}" title="{{ content.field_link.0['#title']}}" class="btn btn-primary mt-4">{{ content.field_link.0['#title']}}</a>
+	{% endif %}
+</div>

@@ -1,0 +1,14 @@
+<div class="col-12 col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <div class="home-5-latest-news-img">
+        <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" /></a>
+    </div>
+    <div class="home-5-latest-news-content">
+        <h6>{{ fields.field_categories.content }}</h6>
+        <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}">
+            <h4>{{ fields.title.content }}</h4>
+        </a>
+        <div class="date">
+        <h6>{{ fields.created.content }} <span class="dot"></span> {{ fields.totalcount.content }} {{ fields.nothing.content }} <span class="dot"></span> {{ fields.uid.content }}</h6> 
+        </div>
+    </div>
+</div>

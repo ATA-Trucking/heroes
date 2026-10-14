@@ -1,0 +1,19 @@
+<div class="tab-style-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+	<div class="row gx-4-1">
+		{% for row in rows %}
+			{% if loop.index <= 3 %}
+			<div class="col-12 col-lg-4">
+				{{ row.content }}
+			</div>
+			{% elseif loop.index > 3 %}
+				{% if loop.index % 2 == 0 %}
+				<div class="col-12 col-md-6 col-lg-4 mt-4">
+					{{ row.content }}
+				{% elseif loop.index % 2 == 1 or loop.last %}
+					{{row.content}}
+				</div>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<div class="home-3-must-reade-latest-news">
+	{% for row in rows %}
+		{% if loop.index % 2 == 1 %}
+		<div class="row gx-3">
+			{{ row.content }}
+			{% if loop.index % 2 == 1 and loop.last %}
+			</div>
+			{% endif %}
+		{% elseif loop.index % 2 == 0 %}
+			{{ row.content }}
+			{% if loop.index % 2 == 0 and loop.last %}
+			</div>
+			{% else %}
+			</div>
+			<hr>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+</div>

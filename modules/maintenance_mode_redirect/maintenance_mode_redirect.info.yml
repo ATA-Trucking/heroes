@@ -1,0 +1,11 @@
+name: Maintenance Mode Redirect
+type: module
+description: Redirect site visitors to another URL when Maintenance Mode is enabled.
+core: 8.x
+core_version_requirement: ^8 || ^9
+configure: system.site_maintenance_mode
+
+# Information added by Drupal.org packaging script on 2021-09-27
+version: '2.0.0'
+project: 'maintenance_mode_redirect'
+datestamp: 1632709752

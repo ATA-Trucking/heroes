@@ -1,0 +1,28 @@
+{% if fields.counter.content == '1' or fields.counter.content == '2' %}
+<div class="editor-pick">
+    <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" alt="{{ fields.field_image_1.content}}"></a>
+</div>
+<div class="editor-pick-content">
+    <h6>{{ fields.field_categories.content }}</h6> <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h4>{{ fields.title.content }}</h4></a>
+    <p>{{fields.body.content}}</p>
+    <h6 class="date">{{ fields.created.content }}</h6> 
+</div>
+{% else %}
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-md-5">
+            <div class="home-1-card-img">
+                <a href="{{ fields.view_node.content}}" title="{{ fields.title_1.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid  " alt="{{ fields.field_image_1.content}}"></a>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+                <h6 class="card-title">{{ fields.field_categories.content }}</h6> <a href="{{ fields.view_node.content}}" title="{{ fields.title_1.content }}"><h5>{{ fields.title_1.content }}</h5></a>
+                <p class="card-text"><small class="text-muted">{{ fields.created.content }}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+

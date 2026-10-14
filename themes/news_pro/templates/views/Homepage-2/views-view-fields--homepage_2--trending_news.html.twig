@@ -1,0 +1,31 @@
+{% if fields.counter.content == '1' %}
+<div class="home-2-trending-news-wapper">
+    <div class="home-2-trending-news-img">
+        <a href="{{ fields.view_node.content}}" title="News">
+            <img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" />
+        </a> 
+    </div>
+    <div class="home-2-trending-news-content">
+        <h6><span>{{ fields.field_categories.content }}</span></h6>
+        <a href="{{ fields.view_node.content}}" title="News"><h4>{{ fields.title_1.content }}</h4></a>
+        <h5>{{ fields.created.content }}</h5>
+    </div>
+</div>
+{% else %}
+<div class="card mb-3 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <div class="home-1-card-img">
+                <a href="{{ fields.view_node.content}}" title="{{ fields.title_1.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" /></a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                    <h6 class="card-title"><span>{{ fields.field_categories.content }}</span></h6> 
+                    <a href="{{ fields.view_node.content}}" title="{{ fields.title_1.content }}"><h5>{{ fields.title.content }}</h5></a> 
+                <p class="card-text"><small class="text-muted">{{ fields.created.content }}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

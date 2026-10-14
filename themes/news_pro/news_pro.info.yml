@@ -1,0 +1,43 @@
+name: News Pro
+type: theme
+description: 'Basic structure for a News Pro Theme.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+base theme: bootstrap_barrio
+
+libraries:
+  - news_pro/bootstrap
+  - news_pro/global-styling
+
+regions:
+  top_header: 'Top header'
+  top_header_form: 'Top header form'
+  header: Header
+  header_form: 'Header form'
+  weather: 'Weather'
+  language: 'Language'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  search: 'Search'
+  header_ad: 'Header Ad Block'
+  breaking_news: 'Breaking News'
+  banner: 'Banner'
+  tabs: 'Tabs'
+  home_section: 'Homepage page sections'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_news: 'Featured news'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  article_banner: 'Article Banner'
+  article_bottom: 'Aricle Page Bottom'
+  featured_bottom: 'Featured bottom'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'
+

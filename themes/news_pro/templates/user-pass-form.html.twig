@@ -1,0 +1,29 @@
+{% set base_url = url('<front>')  %}
+<section class="sec-pad-90" id="forgot-pwd">
+  <div class="container">
+      <div class="row justify-content-center align-items-center">
+           <div class="col-12 col-lg-8">
+               <div class="wapper-login-reister">
+                   <div class="login-reister-title">
+                       <h2>{{r_pass_title}}</h2>
+                       <p>{{r_pass_content}}</p>
+                   </div>
+                   <div class="form-3 mt-5 mb-">
+                      <form action="#" method="post">
+                          <div class="row g-4">
+                              <div class="col-12 col-md-12">
+                                {{ form.name }}
+                                <small class="text-muted">Password reset instructions will be sent to your registered email address.</small>
+                              </div> 
+                            </div>
+                            <div class=" mt-4">
+                            {{ form.actions }}
+                            {{ form.form_build_id }}
+                            {{ form.form_id }}
+                      </form>
+                  </div>
+               </div>
+           </div>
+      </div>
+  </div> 
+</section>

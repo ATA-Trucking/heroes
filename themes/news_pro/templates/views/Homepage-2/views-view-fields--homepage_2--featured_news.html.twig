@@ -1,0 +1,17 @@
+<div class="card mb-3 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <div class="home-1-card-img">
+                <a href="{{ fields.view_node.content}}" title="{{fields.title.content}}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" /></a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h6 class="card-title mt-lg-0 mt-md-2"><span>{{ fields.field_categories.content }}</span> {{ fields.created.content }}</h6> 
+                <a href="{{ fields.view_node.content}}" title="{{fields.title.content}}"><h5>{{fields.title.content}}</h5></a> 
+                <p class="card-text">{{fields.body.content}}</p>
+                <a href="{{ fields.view_node.content}}" title="{{ fields.nothing.content }}" class="text-link-with-icon">{{ fields.nothing.content }} <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 694.78 296.45"><defs></defs><title>right_arrow</title><path d="M766.22,442.74l-169,123c-19,12-29,5-31-16v-88h-459a31.16,31.16,0,0,1-31-31h0a31.16,31.16,0,0,1,31-31h459v-96c1-30,11-34,31-23l168,140C772.22,426.74,773.22,433.74,766.22,442.74Z" transform="translate(-76.22 -275.15)"></path></svg></i></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="post-gallery">
+	<div class="row gx-3 justify-content-center">
+		{# {% if content.field_gallery_image[3] %} #}
+		<div class="col-12 col-md-6 col-lg-6 mt-3 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s">
+			<div class="post-gallery-left-img">
+				<img src="{{file_url(content.field_gallery_image[0]['#paragraph'].field_image_gallery.entity.uri.value)}}" alt="{{content.field_gallery_image[0]['#paragraph'].field_image_gallery.alt}}">
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-6  mt-3 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s">
+			<div class="row">
+				<div class="col-12">
+					<div class="post-gallery-grid-img">
+						<img src="{{file_url(content.field_gallery_image[1]['#paragraph'].field_image_gallery.entity.uri.value)}}" alt="{{content.field_gallery_image[1]['#paragraph'].field_image_gallery.alt}}">
+					</div>
+				</div>
+				<div class="col-12 mt-3">
+					<div class="post-gallery-grid-img">
+						<img src="{{file_url(content.field_gallery_image[2]['#paragraph'].field_image_gallery.entity.uri.value)}}" alt="{{content.field_gallery_image[2]['#paragraph'].field_image_gallery.alt}}">
+					</div>
+				</div>
+			</div>
+		</div>
+		{# {% else %} #}
+        {# {% for key,value in content.field_section['#items'] %} #}
+		{# <div class="col-md-6 col-12">
+			<div class="post-gallery-grid-img">
+				<img src="{{file_url(content.field_gallery_image[1]['#paragraph'].field_image_gallery.entity.uri.value)}}" alt="{{content.field_gallery_image[1]['#paragraph'].field_image_gallery.alt}}">
+			</div>
+		</div>
+		{% endfor %} #}
+		{# {% endif %} #}
+	</div>
+</div>

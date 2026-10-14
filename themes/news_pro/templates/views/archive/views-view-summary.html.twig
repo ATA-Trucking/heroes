@@ -1,0 +1,11 @@
+<div class="news-archives wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <ul>
+  {% for row in rows %}
+    <li>
+      <a href="{{ row.url }}"{{ row.attributes.addClass(row.active ? 'is-active')|without('href') }}>{{ row.link }} ({{ row.count }})</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+                                        

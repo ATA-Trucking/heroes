@@ -1,0 +1,27 @@
+{% if fields.counter.content == '1' or fields.counter.content == '6' or fields.counter.content == '11' or fields.counter.content == '17' or fields.counter.content == '11' or fields.counter.content == '23' or fields.counter.content == '29' or fields.counter.content == '35' or fields.counter.content == '41' or fields.counter.content == '47'%}
+<div class="col-12 col-md-12 col-lg-6">
+    <div class="carousel-3-wapper">
+        <div class="carousel-3-img">
+            <img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" />
+        </div>
+        <div class="carousel-3-content">
+            <h5><span>{{ fields.field_categories.content }}</span></h5>
+            <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h3>{{ fields.title.content }}</h3></a>
+            <h6><span class="line-1"></span>{{ fields.created.content }} <span class="line-2"></span></h6>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="col-12 col-md-12 col-lg-6">
+    <div class="carousel-3-wapper">
+        <div class="carousel-3-right-img">
+            <img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" />
+        </div>
+        <div class="carousel-3-right-content">
+            <h5><span>{{ fields.field_categories.content }}</span></h5>
+            <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h3>{{ fields.title.content }}</h3></a>
+            <h6><span class="line-1"></span>{{ fields.created.content }} <span class="line-2"></span></h6>
+        </div>
+    </div>
+</div>
+{% endif %}

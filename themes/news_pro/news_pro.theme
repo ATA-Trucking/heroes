@@ -1,0 +1,456 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+/**
+ * Implements hook_theme().
+ */
+function news_pro_theme(&$existing, $type, $theme, $path) {
+  $variables['login_title'] = theme_get_setting('login_title'); 
+   $hooks = array();
+   $hooks['user_login_form'] = array(
+    'render element' => 'form',
+    'template' => 'user-login-form',
+    'preprocess functions' => array(
+       'news_pro_preprocess_user_login'
+    ),
+   );
+   $hooks['user_register_form'] = array(
+    'render element' => 'form',
+    'template' => 'user-register-form',
+    'preprocess functions' => array(
+       'news_pro_preprocess_user_register'
+    ),
+   );
+   $hooks['user_pass'] = array(
+    'render element' => 'form',
+    'template' => 'user-pass-form',
+    'preprocess functions' => array(
+       'news_pro_preprocess_user_pass'
+    ),
+   );
+   return $hooks; 
+}
+/**
+ * Implements hook_form_alter().
+ */
+function news_pro_form_alter( &$form, &$form_state, $form_id ) {
+  
+  if ($form_id == 'user_login_form') {
+    $form['actions']['submit']['#value'] = t('Login');
+    $form['actions']['submit']['#attributes']['class'][]='btn btn-sm btn-secondary';
+    $form['name']['#attributes']['autofocus']='none';
+  }
+  if ($form_id == 'user_register_form') {
+    $form['actions']['submit']['#value'] = t('Register');
+    $form['actions']['submit']['#attributes']['class'][]='btn btn-sm btn-secondary';
+  }
+  if ($form_id == 'user_pass') {
+    $form['actions']['submit']['#value'] = t('Reset');
+    $form['actions']['submit']['#attributes']['class'][]='btn btn-sm btn-secondary';
+  }
+}
+/**
+ * Implements hook_preprocess_user_login().
+ */
+function news_pro_preprocess_user_login(&$variables) {
+  $variables['login_title'] = theme_get_setting('login_title');
+  $variables['login_content'] = theme_get_setting('login_content');
+}
+/**
+ * Implements hook_preprocess_user_register().
+ */
+function news_pro_preprocess_user_register(&$variables) {
+  $variables['register_title'] = theme_get_setting('register_title');
+  $variables['register_content'] = theme_get_setting('register_content');
+}
+/**
+ * Implements hook_preprocess_user_pass().
+ */
+function news_pro_preprocess_user_pass(&$variables) {
+  $variables['r_pass_title'] = theme_get_setting('r_pass_title');
+  $variables['r_pass_content'] = theme_get_setting('r_pass_content');
+}
+/**
+ * Implements hook_preprocess_page().
+ */
+function news_pro_preprocess_html(&$variables) {
+  $variables['time'] = \Drupal::time()->getCurrentTime();
+  global $base_url;
+  $variables['base_url'] = $base_url;
+  //$variables['primary_colors'] = explode(',', theme_get_setting('primary_colors') ?? '');
+  //$variables['secondary_colors'] = explode(',', theme_get_setting('secondary_colors' ?? ''));
+  $variables['show_pannel'] = theme_get_setting('show_pannel');
+  $variables['sticky'] = theme_get_setting('sticky');
+  $variables['loader'] = theme_get_setting('loader');
+  $variables['styles'] = theme_get_setting('styles');
+  // header
+  $variables['header_variation'] = theme_get_setting('header_variation');
+  $variables['color_set'] = ['set_1' => [
+      'title' => t('color_set_1'),
+      'name' => t('Combo 1'),
+      'colors' => [
+      'primary_color' => '#ff5555',
+      'secondary_color' => '#000000',
+      ],
+    ],
+    'set_2' => [
+      'title' => t('color_set_2'),
+      'name' => t('Combo 2'),
+      'colors' => [
+      'primary_color' => '#d2a679',
+      'secondary_color' => '#014b5f',
+      ],
+    ],
+    'set_3' => [
+      'title' => t('color_set_3'),
+      'name' => t('Combo 3'),
+      'colors' => [
+      'primary_color' => '#44bcc5',
+      'secondary_color' => '#153156',
+      ],
+    ],
+    'set_4' => [
+      'title' => t('color_set_4'),
+      'name' => t('Combo 4'),
+      'colors' => [
+      'primary_color' => '#cd6767',
+      'secondary_color' => '#282828',
+      ],
+    ],
+    'set_5' => [
+      'title' => t('color_set_5'),
+      'name' => t('Combo 5'),
+      'colors' => [
+      'primary_color' => '#d315a3',
+      'secondary_color' => '#153156',
+      ],
+    ],
+    'set_6' => [
+      'title' => t('color_set_6'),
+      'name' => t('Combo 6'),
+      'colors' => [
+      'primary_color' => '#608735',
+      'secondary_color' => '#000000',
+      ],
+    ],
+    'set_7' => [
+      'title' => t('color_set_7'),
+      'name' => t('Combo 7'),
+      'colors' => [
+      'primary_color' => '#c98723',
+      'secondary_color' => '#041b45',
+      ],
+    ],
+    'set_8' => [
+      'title' => t('color_set_8'),
+      'name' => t('Combo 8'),
+      'colors' => [
+      'primary_color' => '#f44336',
+      'secondary_color' => '#000000',
+      ],
+    ],
+    'set_9' => [
+      'title' => t('color_set_9'),
+      'name' => t('Combo 9'),
+      'colors' => [
+      'primary_color' => '#fB6a4f',
+      'secondary_color' => '#014b5f',
+      ],
+    ],
+    'set_10' => [
+      'title' => t('color_set_10'),
+      'name' => t('Combo 10'),
+      'colors' => [
+      'primary_color' => '#12b6b6',
+      'secondary_color' => '#000000',
+      ],
+    ],
+  ];
+  
+}
+function news_pro_preprocess_page(&$variables) {
+  $variables['time'] = \Drupal::time()->getCurrentTime();
+  
+  global $base_url;
+  $variables['base_url'] = $base_url;
+  // header
+  $variables['header_variation'] = theme_get_setting('header_variation');
+  $variables['sticky'] = theme_get_setting('sticky');
+  $variables['loader'] = theme_get_setting('loader');
+  $variables['styles'] = theme_get_setting('styles');
+  // Hamburger Sidebar
+  // Hamburger Sidebar
+  $variables['show_hamburger'] = theme_get_setting('show_hamburger');
+  $variables['show_date'] = theme_get_setting('show_date');
+  $variables['show_weather'] = theme_get_setting('show_weather');
+  $variables['contact_title'] = theme_get_setting('contact_title');
+  $variables['contact_description'] = theme_get_setting('contact_description');
+  $variables['mail_title'] = theme_get_setting('mail_title');
+  $variables['mail_address'] = theme_get_setting('mail_address');
+  $variables['ph_title'] = theme_get_setting('ph_title');
+  $variables['ph_number'] = theme_get_setting('ph_number');
+  $variables['social_links_title'] = theme_get_setting('social_links_title');
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['instagram'] = theme_get_setting('instagram');
+  $variables['copyrights'] = theme_get_setting('copyrights')['value'];
+  $variables['c_description'] = theme_get_setting('c_description'); 
+
+  // Footer logo
+  $path = "";
+  if (!empty(theme_get_setting('footer_logo'))) {
+    $fid = theme_get_setting('footer_logo')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = file_create_url($file->getFileUri());
+    }
+  }
+  $variables['footer_logo_url'] = $path;
+
+  
+  if(isset($variables['node'])) {
+    $variables['title'] = $variables['node']->title->value;
+  }
+  else{
+    $variables['title'] =$variables['page']['#title'];
+  }
+  /*page 404 and 403*/
+  $variables['e_404_title'] = theme_get_setting('e_404_title');
+  $variables['e_403_title'] = theme_get_setting('e_403_title');
+  $variables['e_404_content'] = theme_get_setting('e_404_content');
+  $variables['e_403_content'] = theme_get_setting('e_403_content');
+  // Error page
+  $path = "";
+  if (!empty(theme_get_setting('e_image'))) {
+    $fid = theme_get_setting('e_image')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = file_create_url($file->getFileUri());
+    }
+  }
+  $variables['e_image_url'] = $path;
+
+
+  // Weather
+  // Getting IP for region
+  // COMMENTED CODE $ip= \Drupal::request()->getClientIp();
+  // IP information about location
+  // COMMENTED CODE $json = file_get_contents("http://ipinfo.io/{$ip}");
+  // COMMENTED CODE $details = json_decode($json,true);
+  // dpm($details);
+  // $loc = array();
+  // COMMENTED CODE if(isset($details['loc'])){
+  // COMMENTED CODE   $loc = explode(",",$details['loc']);
+  // COMMENTED CODE $variables['country_name'] = $details['city'];
+  // Getting weather information of current location
+  // COMMENTED CODE $jsonurl = "https://api.openweathermap.org/data/2.5/weather?lat=".$loc[0]."&lon=".$loc[1]."&appid=dfee4aaec7b6c8ba50d20947760dd1b6";
+  // COMMENTED CODE $json = file_get_contents($jsonurl);
+  // COMMENTED CODE $weather = json_decode($json,true);
+  // COMMENTED CODE if(isset($weather['main']['temp'])){
+  // COMMENTED CODE   $temp = floatval($weather['main']['temp']);
+  // COMMENTED CODE   $temp -= 273.15;
+  // COMMENTED CODE   $variables['weather'] = intval($temp);
+  // COMMENTED CODE }
+  // COMMENTED CODE }
+ }
+/**
+ * Implements hook_maintenance_page().
+ */
+function news_pro_preprocess_maintenance_page(&$variables) {
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['instagram'] = theme_get_setting('instagram');
+  $variables['mode_type'] = theme_get_setting('mode_type');
+  $variables['maintenance_mode_title'] = theme_get_setting('maintenance_mode_title');
+  $variables['maintenance_mode_description'] = theme_get_setting('maintenance_mode_description'); 
+  $variables['bg_image'] = theme_get_setting('bg_image'); 
+  $variables['comingsoon_title'] = theme_get_setting('comingsoon_title');
+  $variables['date'] = theme_get_setting('date'); 
+  $variables['custom_message'] = theme_get_setting('custom_message');
+  $variables['#attached'] = [
+      'drupalSettings' => [
+          'custom_date' => $variables['custom_date'] = theme_get_setting('date'),
+          'custom_message_dateExpired' => $variables['custom_message_dateExpired'] = theme_get_setting('custom_message'),
+      ],
+  ];
+  // Maintenance page
+  $path = "";
+  if (!empty(theme_get_setting('bg_image_m'))) {
+    $fid = theme_get_setting('bg_image_m')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = file_create_url($file->getFileUri());
+    }
+  }
+  $variables['bg_image_m_url'] = $path;
+}
+
+/**
+ * Implements hook_page_alter().
+ */
+function news_pro_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__'.$content_type;
+  }
+}
+/**
+ * Implements hook_preprocess_node().
+ */
+function news_pro_preprocess_node(&$variables) {
+  //render block share
+  $block = \Drupal\block\Entity\Block::load('addtoanybuttons');
+  $variables['share'] = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
+  //render block tags
+  $block = \Drupal\block\Entity\Block::load('views_block__tags_block_1');
+  $variables['tags'] = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
+
+  //render block pager
+  $block = \Drupal\block\Entity\Block::load('views_block__entity_pager_example_entity_pager_example_block');
+  $variables['pager'] = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
+
+  //render block ad
+  $block = \Drupal\block\Entity\Block::load('googlead728x90');
+  $variables['google_ad'] = \Drupal::entityTypeManager()
+    ->getViewBuilder('block')
+    ->view($block);
+
+  // Comments count
+  if ($variables['node']->getType() == 'article') {
+    $variables['comment_count'] = $variables['node']->get('comment')->comment_count;
+  }
+}
+function news_pro_preprocess_form(&$variables) {
+  global $base_url;
+  $variables['base_url'] = $base_url;
+}
+function news_pro_preprocess_comment(&$variables) {
+  // Comment post time
+  $comment = $variables['elements']['#comment'];
+  $variables['created_time'] = $comment->getCreatedTime();
+}
+/**
+ * Implements hook_form_comment_form_alter().
+ */
+function news_pro_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  // dpm($form);
+  $form['subject']['widget']['#access'] = FALSE;
+  $form['subject']['widget']['#access'] = FALSE;
+  $form['actions']['submit']['#value'] = t('Post Comment');
+  $form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary';
+  $form['actions']['preview']['#access'] = FALSE; 
+
+  $form['author']['#attributes']['class'][]='col-12 col-lg-6';
+  $form['field_comment']['#attributes']['class'][]='col-12 col-lg-12';
+  $form['field_email']['#attributes']['class'][]='col-12';
+  $form['author']['#weight'] = -981;
+  $form['actions']['submit']['#weight'] = -1;
+  // dpm($form);
+}
+/**
+ * Implements hook_preprocess_views_view_fields().
+ */
+function news_pro_preprocess_views_view_fields(&$variables) {
+  global $base_url;
+  $variables['base_url'] = $base_url;
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['linkedin'] = theme_get_setting('linkedin');
+  $view = $variables['view'];
+  if($view->id() == 'slider'){
+    $fields_animations=[
+      'title'=>t('Title'),
+      'tagline'=>t('TagLine'),
+      'description'=>t('Description'),
+    ];
+    $variables['animations']=[];
+    foreach ($fields_animations as $key => $value) {
+      $animation_key=$key.'_animation';
+      $duration_key=$key.'_duration';
+      $delay_key=$key.'_delay';
+      $data=[];
+      $data['animation'] = theme_get_setting($animation_key);
+      $data['duration'] = theme_get_setting($duration_key);
+      $data['delay'] = theme_get_setting($delay_key);
+      $variables['animations'][$key]=$data;
+    }
+    $variables['content_position'] = theme_get_setting('content_position');
+    $variables['menu_type'] = theme_get_setting('menu_type');
+  }
+}
+function news_pro_preprocess_views_view_unformatted(&$variables){
+  global $base_url;
+  $variables['base_url'] = $base_url;
+}
+function news_pro_preprocess_field(array &$variables){
+  global $base_url;
+  $variables['base_url'] = $base_url;
+}
+function news_pro_preprocess_item_list__search_results(array &$variables) {
+  global $base_url;
+  $variables['base_url'] = $base_url;
+  
+  $current_path = \Drupal::request()->getpathInfo();
+  //echo $current_path;
+  if ($current_path == '/search/node') {
+    if (\Drupal::request()->query->has('keys')) {
+      $keywords = \Drupal::request()->query->get('keys');
+      $variables['keyword'] = $keywords;
+    }
+  }
+
+  // The $pager_total_items variable is a global
+  // array keyed by the pager element increments.
+  global $pager_total_items;
+
+  // Assuming you have one paged list on your page only,
+  // the element's key should be 0.
+  $variables['total_items_count'] = isset($pager_total_items[0]) ? $pager_total_items[0] : 0;
+}
+  
+/**
+ * Use language code for the language switcher
+*/
+function news_pro_preprocess_links__language_block(&$variables) {
+  $currentLanguageCode = \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId();
+  foreach ($variables['links'] as $i => $link) {
+    /** @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage */
+    $linkLanguage = $link['link']['#options']['language'];
+    if ($currentLanguageCode == $linkLanguage->getId()) {
+      $variables['links']['activeLink'] = $link;
+      unset($variables['links'][$i]);
+    }
+  }
+}
+function news_pro_preprocess_paragraph(&$variables) { 
+  global $base_url;
+  $variables['base_url'] = $base_url;
+  //homepage
+  $variables['homepage_layout'] = theme_get_setting('homepage_layout'); 
+  //social links
+  $variables['facebook'] = theme_get_setting('facebook');
+  $variables['twitter'] = theme_get_setting('twitter');
+  $variables['instagram'] = theme_get_setting('instagram');
+}

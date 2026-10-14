@@ -1,0 +1,16 @@
+<div class="news-archives" id="home-4-editor-pick">
+    <div class="row mt-4 gx-3">
+        {% for row in rows %}
+            {% if loop.index % 2 == 0 and loop.last %}
+                {{ row.content }}
+            {% elseif loop.index % 2 == 0 %}
+                {{ row.content }}
+            <div>
+                <hr>
+            </div>
+            {% else %}
+                {{ row.content }}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

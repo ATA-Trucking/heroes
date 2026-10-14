@@ -1,0 +1,38 @@
+{% if fields.counter.content == '5' or fields.counter.content == '6' or fields.counter.content == '11' or fields.counter.content == '12' or fields.counter.content == '17' or fields.counter.content == '18' or fields.counter.content == '23' or fields.counter.content == '24' or fields.counter.content == '29' or fields.counter.content == '30' or fields.counter.content == '35' or fields.counter.content == '36' %}
+<div class="col-12 col-md-12 col-lg-6  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+    <div class="shortcode-blog-style-2">
+        <div class="shortcode-blog-style-2-img">
+            <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" /></a>
+            <div class="shortcode-blog-style-2-tag">
+                <h6><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 30"><title>tag</title><path d="M26,1H6A1,1,0,0,0,5,2V7H18a1,1,0,0,1,0,2H5V30a1,1,0,0,0,1.51.86L16,25.17l9.49,5.69A1,1,0,0,0,26,31a1,1,0,0,0,.49-.13A1,1,0,0,0,27,30V2A1,1,0,0,0,26,1Z" transform="translate(-5 -1)"></path></svg></i> {{fields.field_categories.content}}</h6>
+            </div>
+        </div>
+        <div class="shortcode-blog-style-2-details">
+            <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"> <h3>{{ fields.title.content }}</h3></a>
+            <div class="shortcode-blog-style-2-date">
+                <h6><i class="fas fa-calendar"></i> {{fields.created.content}}</h6> 
+                <p>{{fields.body.content}} </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="card mb-3  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <div class="home-1-card-img">
+                <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}"/>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h6 class="card-title mt-lg-0 mt-md-2"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 30"><title>tag</title><path d="M26,1H6A1,1,0,0,0,5,2V7H18a1,1,0,0,1,0,2H5V30a1,1,0,0,0,1.51.86L16,25.17l9.49,5.69A1,1,0,0,0,26,31a1,1,0,0,0,.49-.13A1,1,0,0,0,27,30V2A1,1,0,0,0,26,1Z" transform="translate(-5 -1)"></path></svg></i><span>{{fields.field_categories.content}}</span>
+                </h6> 
+                <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h5>{{ fields.title_1.content }}</h5>
+                </a>  
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,22 @@
+<div class="row justify-content-center align-items-center mt-4"> 
+    <div class="col-12 col-md-8">
+        <div class="shortcode-blog-style-3 text-center">
+            <div class="shortcode-blog-style-3-img">
+                <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" alt="{{ fields.field_image_1.content}}"></a>
+            </div>
+            <div class="shortcode-blog-style-3-details">
+                <h6>{{ fields.field_categories.content }}</h6>
+                <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h3>{{ fields.title.content }}</h3></a>
+                <div class="shortcode-blog-style-3-date">
+                    <h6>{{ fields.created.content }}  <span class="dot"></span> {{ fields.uid.content }}</h6>
+                </div>
+                <div class="banner-btn mt-5" id="newsProButton">
+                    <a href="{{fields.view_node.content}}" class="btn btn-md btn-secondary ">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-8 mb-4">
+        <hr>
+    </div>
+</div>

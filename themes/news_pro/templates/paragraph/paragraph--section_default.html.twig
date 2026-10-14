@@ -1,0 +1,148 @@
+<section class="sec-pad-90 trending-news bg-{{content.field_background_colour.0}}">
+	<div class="container">
+		<!-- Heading Style 1 -->
+		{% if paragraph.field_style.value == 'style-1' %}
+			{% if content.field_title.0 %}
+				<div class="heading-1">
+					<h2>{{content.field_title.0}}</h2> 
+				</div>
+			{% endif %}
+			{% if content.field_formatted_title.0 %}
+			<div class="tab-style-1-wapper wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+				<div class="tab-1-title">
+					<h2>{{content.field_formatted_title.0}}</h2> 
+				</div>
+			</div>
+			{% endif %}
+		{% endif %}
+		<!-- Heading Style 1 End -->
+		<!-- Heading Style 2 -->
+		{% if paragraph.field_style.value == 'style-2' %}
+			{% if content.field_title.0 %}
+				<div class="tab-style-2-wapper">
+                    <div class="tab-2-title  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+                        <h2>{{content.field_title.0}}</h2>
+                    </div>
+                </div>
+			{% endif %}
+			{% if content.field_formatted_title.0 %}
+			<div class="tab-style-2-wapper wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+				<div class="tab-2-title">
+					<h2>{{content.field_formatted_title.0}}</h2> 
+				</div>
+			</div>
+			{% endif %}
+		{% endif %}
+		<!-- Heading Style 2 End -->
+		<!-- Heading Style 3 -->
+		{% if paragraph.field_style.value == 'style-3' %}
+		<div class="home-3">
+			{% if content.field_formatted_title.0 %}
+				<div class="tab-style-1-wapper m-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+                    <div class="tab-1-title wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+                        <h2>{{content.field_formatted_title.0}}</h2>
+                    </div>
+                </div>
+				<div>
+					<hr>
+				</div>
+			{% endif %}
+			{% if content.field_title.0 %}
+			<div class="video heading-3 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+				<h2>{{content.field_title.0}}</h2>
+			</div>
+			<div>
+				<hr>
+			</div>
+			{% endif %}
+        </div>
+		{% endif %}
+		<!-- Heading Style 3 End -->
+		<!-- Heading Style 4 -->
+		{% if paragraph.field_style.value == 'style-4' %}
+		<div class="home-4">
+			{% if content.field_title.0 %}
+				<div class="tab-style-1-wapper">
+                    <div class="home-4-title wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+                        <h2>{{content.field_title.0}}</h2>
+                    </div>
+                </div>
+				<div>
+					<hr>
+				</div>
+			{% endif %}
+			{% if content.field_formatted_title.0 %}
+				<div class="tab-style-1-wapper">
+                    <div class="home-4-title wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+                        <h2>{{content.field_formatted_title.0}}</h2>
+                    </div>
+                </div>
+				<div>
+					<hr>
+				</div>
+			{% endif %}
+		</div>
+		{% endif %}
+		{% if paragraph.field_style.value == 'style-5' %}
+		<div class="home-5">
+			{% if content.field_title.0 %}
+				<div class="hone-5-tilte wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+					<h2>{{content.field_title.0}}</h2>
+				</div>
+			{% endif %}
+			{% if content.field_formatted_title.0 %}
+				<div class="hone-5-tilte wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+					<h2>{{content.field_title.0}}</h2>
+				</div>
+			{% endif %}
+		</div>
+		{% endif %}
+		<!-- Heading Style 4 End -->
+		<!-- View Content -->
+		{{content.field_view}}
+		<!-- View Content end -->
+		<!-- View More button -->
+		{% if content.field_link.0['#url'] %}
+			{% if paragraph.field_style.value == 'style-1' %}
+			<div class="home-1-tab">
+				<div class="d-flex justify-content-center align-items-center mt-5 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 	0.15s;">
+					<a href="{{ content.field_link.0['#url'] }}" title="{{ content.field_link.0['#title']}}" class="btn btn-primary">{{ content.field_link.0['#title']}}</a>
+				</div>
+			</div>
+			{% elseif paragraph.field_style.value == 'style-2' %}
+			<div class="home-btn-1">
+				<div class="d-flex justify-content-center align-items-center mt-5  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+					<div class="tab-btn">
+						<a href="{{ content.field_link.0['#url'] }}" title="{{ content.field_link.0['#title']}}" class="btn btn-primary">{{ content.field_link.0['#title']}}</a>
+					</div> 
+				</div>
+			</div>
+			{% elseif paragraph.field_style.value == 'style-3' %}
+			<div class="home-3-tabs">
+				<div class="d-flex justify-content-center align-items-center mt-5  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+					<div class="tab-btn">
+						<a href="{{ content.field_link.0['#url'] }}" title="{{ content.field_link.0['#title']}}" class="btn btn-primary">{{ content.field_link.0['#title']}}</a>
+					</div> 
+				</div>
+			<div>
+			{% elseif paragraph.field_style.value == 'style-4' %}
+			<div class="home-4-tabs">
+				<div class="d-flex justify-content-center align-items-center mt-5  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+					<div class="tab-btn">
+						<a href="{{ content.field_link.0['#url'] }}" title="{{ content.field_link.0['#title']}}" class="btn btn-md btn-outline-primary">{{ content.field_link.0['#title']}}</a>
+					</div> 
+				</div>
+			<div>
+			{% elseif paragraph.field_style.value == 'style-5' %}
+			<div class="home-5-tabs">
+				<div class="d-flex justify-content-center align-items-center mt-5  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+					<div class="home-5-btn">
+						<a href="{{ content.field_link.0['#url'] }}" title="{{ content.field_link.0['#title']}}" class="btn btn-md btn-secondary">{{ content.field_link.0['#title']}}</a>
+					</div> 
+				</div>
+			<div>
+		{% endif %}
+		{% endif %}
+		<!-- View More button end -->
+	</div>
+</section>

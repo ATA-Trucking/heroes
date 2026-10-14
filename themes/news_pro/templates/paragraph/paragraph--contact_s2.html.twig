@@ -1,0 +1,59 @@
+<section class="sec-pad-100" id="contact-us-2">
+	<div class="container">
+		<div class="contact-us-2-wapper wow bounceIn" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+		<div class="row gx-5">
+			{% if content.field_form[0] %}
+			<div class="col-12 col-lg-7 wow fadeInLeft" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+				<div class="form-1"> 
+					{% if content.field_form_title[0] %}
+					<div class="contact-content-title">
+						<h2>{{content.field_form_title.0}}</h2>
+					</div>
+					{% endif %}
+					{{content.field_form.0}}
+				</div>
+			</div>
+			{% endif %}
+			<div class="col-12 col-lg-5 wow fadeInRight" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+				<div class="contact-content">
+					{% if content.field_title[0] %}
+					<div class="contact-content-title">
+						<h2>{{content.field_title.0}}</h2>
+					</div>
+					{% endif %}
+					<div class="contact-content-body">
+						{% if content.field_title[0] %}
+						<p>{{content.field_description.0}}</p>
+						{% endif %}
+						<div class="contact-call-info">
+							{% if content.field_mail[0] %}
+							<ul>
+								<li><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81"><title>mail</title><path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path></svg></i>{{content.field_mail_title.0}}</li>
+								<li><span></span><a href="mailto:{{content.field_mail.0}}" title="{{content.field_mail.0}}">{{content.field_mail.0}}</a></li> 
+							</ul>
+							{% endif %}
+							{% if content.field_phone[0] %}
+							<ul>
+								<li><i><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve"> 
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+										L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z"></path>
+									</svg></i>{{content.field_phone_title.0}}</li>
+								<li><span></span><a href="tel:{{content.field_phone.0}}" title="{{content.field_phone.0}}">{{content.field_phone.0}}</a></li>
+							</ul>
+							{% endif %}
+						</div>
+						<div class="contact-social">
+							<h4>{{content.field_social_title.0}}</h4>
+							<ul>
+								{{content.field_social_links}}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+

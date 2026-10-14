@@ -1,0 +1,12 @@
+<div id="home-2-treding-news">
+	<div class="home-2-trending-news-featured">
+		{% for row in rows %}
+			{% if loop.last %}
+				{{ row.content }}
+			{% else %}
+				{{ row.content }}
+				<hr>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

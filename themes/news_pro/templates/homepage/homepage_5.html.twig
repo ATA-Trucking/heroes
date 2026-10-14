@@ -1,0 +1,85 @@
+
+{% block head %}
+<!-- header -->
+    <div id="header">
+      {% include '@news_pro/header/header.html.twig' %}
+    </div>
+<!-- End of header -->
+{% endblock %}
+<section class="page-content" id="content">
+    {% block content %}
+        {% if page.breaking_news %}
+        <!-- breaking_news -->
+        {{ page.breaking_news }}
+        <!-- End of breaking_news -->
+        {% endif %}
+        {% if page.banner %}
+        <!-- banner -->
+        {{ page.banner }}
+        <!-- End of banner -->
+        {% endif %}
+        {% if page.featured_news %}
+        <!-- featured_top -->
+        {{ page.featured_news }}
+        <!-- End of featured_news -->
+        {% endif %}
+        <div id="main">
+          <div class="clearfix">
+              <main>
+                <section class="section">
+                  <a id="main-content" tabindex="-1"></a>
+                  {% set url = url('<current>') %}
+                  {% if page.tabs %}
+                  {% if 'user' in url|render|render %}
+                    <section id="user-tabs">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-10 col-sm-9 col-xs-12 ">
+                            {{ page.tabs }}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  {% else %}  
+                    <section id="tabs">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            {{ page.tabs }}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  {% endif %}
+                  {% endif %}
+                  {% if page.sidebar_second %}
+                    <div class="container">
+                      <div class="row">
+                        <div class="col mx-auto">
+                          <div class="content-with-sidebar">
+                            {{ page.content }}
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-12 col-lg-4 sidebar pt-section">
+                          {{ page.sidebar_second }}
+                        </div>
+                      </div>
+                    </div>
+                  {% else %}
+                  {{ page.content }}
+                  {% endif %}
+                </section>
+                <!-- End of Main Content -->
+                {% if page.featured_bottom %}
+                  <!-- Feature Top (Call To Action)-->
+                  {{ page.featured_bottom }}
+                  <!-- End of Feature top -->
+                {% endif %}
+              </main>
+          </div>
+        </div>
+    {% endblock %}
+    {% block footer %}
+      {% include '@news_pro/footer/footer.html.twig' %}
+    {% endblock %}
+</section>

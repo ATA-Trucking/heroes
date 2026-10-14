@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+
+{% set base_url = url('<front>') %}
+{% if "1" in mode_type  %}
+  <!-- maintenance_mode -->
+  <section class="comming-soon" id="maintenance" style="background: url('{{bg_image_m_url}}');">
+       <div class="container">
+        <div class="row justify-content-center">
+            <div class="comming-soon-text text-center">
+                <h2>{{ maintenance_mode_title }}</h2> 
+            </div>
+            <div class="col-4">
+                <hr>
+            </div>
+        </div> 
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9">
+                <div class="comming-soon-content text-center">
+                    <p>{{ maintenance_mode_description }}</p>
+  
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
+  <!-- maintenance_mode End-->
+{% else %}
+<!-- Coming Soon -->
+  <section class="comming-soon" style="background: url('{{bg_image_m_url}}');">
+       <div class="container">
+        <div class="row justify-content-center">
+            <div class="comming-soon-text text-center">
+                <h2> {{ comingsoon_title }}</h2>
+                <div id="fh5co-main-content" data-aos="fade-up"> 
+                  <div class="dt js-dt">
+                    <div class="dtc js-dtc">
+                      <div id="clockdiv" class="animate-box" data-animate-effect="fadeInUp">
+                        <div class="cs-date">
+                          <div class="date_expired"></div>
+                          <span class="days"></span>
+                          <div class="smalltext">Days</div>
+                        </div>
+                        <div class="cs-date">
+                          <div class="date_expired"></div>
+                          <span class="hours"></span>
+                          <div class="smalltext">Hours</div>
+                        </div>
+                        <div class="cs-date">
+                          <div class="date_expired"></div>
+                          <span class="minutes"></span>
+                          <div class="smalltext">Mins</div>
+                        </div>
+                        <div class="cs-date">
+                          <div class="date_expired"></div>
+                          <span class="seconds"></span>
+                          <div class="smalltext">Secs</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-4">
+                <hr>
+            </div>
+        </div> 
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9">
+                <div class="comming-soon-content text-center">
+                    <p>{{custom_message}}</p>
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
+<!-- Coming Soon End -->
+  <!-- Coming Soon End -->
+{% endif %}

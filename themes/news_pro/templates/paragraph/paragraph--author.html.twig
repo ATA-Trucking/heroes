@@ -1,0 +1,20 @@
+<div class="col-12 col-md-6 col-lg-4 mt-5 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <div class="author-wapper">
+        <div class="author-img">
+            <img src="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{ content.field_image['#items'].alt }}" title="{{ content.field_image['#items'].title }}" />
+        </div>
+        <div class="author-name">
+            <h4>{{content.field_title.0}}</h4>
+            <h6>{{ content.field_designation.0 }}</h6> 
+            <p>{{ content.field_description.0 }}</p>
+        </div>
+        {% if content.field_social_links[0] %}
+        <div class="author-social">
+            <ul>
+                {{ content.field_social_links }}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+                 

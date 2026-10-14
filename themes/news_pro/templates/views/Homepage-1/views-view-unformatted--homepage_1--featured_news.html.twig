@@ -1,0 +1,14 @@
+<div id="featured-news">
+	{% for row in rows %}
+		{% if loop.first %}
+			<div class="featured-news-top-news">
+				{{ row.content }}
+			</div>
+		{% else %}
+			<div class="featured-news-card">
+				{{row.content}}
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+

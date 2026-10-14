@@ -1,0 +1,23 @@
+<div id="home-2-treding-news">
+	<div class="video-wapper">
+		<div class="row mb-5">
+		{% for row in rows %}
+			{% if loop.index == 1 %}
+				<div class="col-12 col-md-12 col-lg-6">
+					{{ row.content }}
+				</div>
+			{% else %}
+				{% if loop.index == 2 %}
+					<div class="col-12 col-md-12 col-lg-6"> 
+						{{row.content}}
+				{% elseif loop.last %}
+						{{row.content}}
+					</div>
+				{% else %}
+					{{row.content}}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</div>
+	</div>
+</div>

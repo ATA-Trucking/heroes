@@ -1,0 +1,22 @@
+<div class="col-12 col-md-12 col-lg-12">
+    <div class="card mb-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+        <div class="row g-4">
+            <div class="col-md-5">
+                <div class="home-1-card-img">
+                    <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content}}"></a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h6 class="card-title">{{ fields.field_categories.content }}</h6> 
+                    <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h4>{{ fields.title.content }}</h4></a> 
+                    <p>{{fields.body.content}}</p>
+                    <p class="card-text"><small class="text-muted">{{ fields.created.content }}</small> <span class="dot"></span><small>{{ fields.uid.content }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <hr>
+    </div>
+</div>

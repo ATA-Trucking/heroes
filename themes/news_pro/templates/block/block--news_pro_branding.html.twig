@@ -1,0 +1,45 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Bartik's theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+{% set front_page = url('<front>')  %}
+{% set attributes = attributes.addClass('site-branding') %}
+{% block content %}
+  {% if site_logo %}
+    <a href="{{ front_page }}" title="Home" rel="home" class="navbar-brand">
+      <img src="{{ site_logo }}" alt="Home" class="img-fluid d-sm-none d-lg-block d-none">
+	  <img src="/sites/default/files/TFHLogoSmW1a.png" alt="Home" class="img-fluid d-lg-none">
+    </a>
+  {% else %}
+    <a class="navbar-brand" href="{{ front_page }}" title="{{ 'Home'|t }}">
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.2 50.62"><defs><style>.Logo-1 .cls-1{fill:var(--primary) !important;}.cls-2{font-size:23.18px;fill:#fff !important;font-family:Poppins-SemiBold, Poppins;font-weight:600;}</style></defs><title>News pro </title><path d="M163.32,210.34V259h-9.74l-22-33.32V259H121.8V210.34h9.74l22,33.38V210.34Z" transform="translate(-121.8 -208.96)"></path><path d="M189.75,259.58c-11.2,0-19.34-7.79-19.34-19.89s7.93-19.89,19.34-19.89c11.13,0,19,7.58,19,19.06a22.55,22.55,0,0,1-.28,3.75H180.29c.49,5.7,4.38,8.9,9.25,8.9a7.93,7.93,0,0,0,7.72-4.66h10.5C205.68,254,199.28,259.58,189.75,259.58Zm-9.39-23.51h18.29c-.14-5.07-4.17-8.27-9.18-8.27C184.81,227.8,181.12,230.79,180.36,236.07Z" transform="translate(-121.8 -208.96)"></path><path d="M211.52,220.42h9.87l6.82,29.35,7.37-29.35h10.3l7.23,29.29,6.81-29.29h9.32L258,259H247.47l-7-26.92-7,26.92H222.85Z" transform="translate(-121.8 -208.96)"></path><path d="M289.27,259.58c-9.66,0-16.41-5.63-16.83-12.8h9.81c.35,2.93,3.06,5.15,7,5.15s5.91-1.74,5.91-4c0-6.89-21.77-2.51-21.77-16.63,0-6.39,5.7-11.54,15.23-11.54,9.32,0,14.95,5.08,15.51,12.73h-9.32c-.28-3-2.64-5-6.47-5-3.62,0-5.49,1.46-5.49,3.68,0,7,21.35,2.65,21.63,16.77C304.44,254.57,298.66,259.58,289.27,259.58Z" transform="translate(-121.8 -208.96)"></path><rect class="cls-1" x="193.97" width="67.23" height="39.41" style="fill:var(--primary)"></rect><text class="cls-2" transform="translate(204.32 27.84)">PRO</text></svg>
+    </a>
+  {% endif %}
+  {% if site_name or site_slogan %}
+    <div class="site-branding__text">
+      {% if site_name %}
+        <h2>{{ site_name }}</h2>
+      {% else %}
+        <div class="site-branding__name">
+          <a class="navbar-brand" href="{{ front_page }}" title="{{ 'Home'|t }}">
+              <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.2 50.62"><defs><style>.Logo-1 .cls-1{fill:var(--primary) !important;}.cls-2{font-size:23.18px;fill:#fff !important;font-family:Poppins-SemiBold, Poppins;font-weight:600;}</style></defs><title>News pro </title><path d="M163.32,210.34V259h-9.74l-22-33.32V259H121.8V210.34h9.74l22,33.38V210.34Z" transform="translate(-121.8 -208.96)"></path><path d="M189.75,259.58c-11.2,0-19.34-7.79-19.34-19.89s7.93-19.89,19.34-19.89c11.13,0,19,7.58,19,19.06a22.55,22.55,0,0,1-.28,3.75H180.29c.49,5.7,4.38,8.9,9.25,8.9a7.93,7.93,0,0,0,7.72-4.66h10.5C205.68,254,199.28,259.58,189.75,259.58Zm-9.39-23.51h18.29c-.14-5.07-4.17-8.27-9.18-8.27C184.81,227.8,181.12,230.79,180.36,236.07Z" transform="translate(-121.8 -208.96)"></path><path d="M211.52,220.42h9.87l6.82,29.35,7.37-29.35h10.3l7.23,29.29,6.81-29.29h9.32L258,259H247.47l-7-26.92-7,26.92H222.85Z" transform="translate(-121.8 -208.96)"></path><path d="M289.27,259.58c-9.66,0-16.41-5.63-16.83-12.8h9.81c.35,2.93,3.06,5.15,7,5.15s5.91-1.74,5.91-4c0-6.89-21.77-2.51-21.77-16.63,0-6.39,5.7-11.54,15.23-11.54,9.32,0,14.95,5.08,15.51,12.73h-9.32c-.28-3-2.64-5-6.47-5-3.62,0-5.49,1.46-5.49,3.68,0,7,21.35,2.65,21.63,16.77C304.44,254.57,298.66,259.58,289.27,259.58Z" transform="translate(-121.8 -208.96)"></path><rect class="cls-1" x="193.97" width="67.23" height="39.41" style="fill:var(--primary)"></rect><text class="cls-2" transform="translate(204.32 27.84)">PRO</text></svg>
+          </a>
+        </div>
+      {% endif %}
+      {% if site_slogan %}
+        <div class="site-branding__slogan">{{ site_slogan }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}

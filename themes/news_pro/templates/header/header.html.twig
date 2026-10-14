@@ -1,0 +1,1024 @@
+<!-- Header Start -->
+<!-- header style 1 -->
+<header id="header-1" class="{{active_1}} header_type">
+	<div class="topbar-1-wapper">
+	    <div class="container">
+	        <div class="topbar-wapper">
+	            <div class="topbar-1-left">
+	                <ul>
+	                    {% if facebook %}
+	                    <li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+	                    {% endif %}
+	                    {% if twitter %}
+	                    <li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+	                    {% endif %}
+	                    {% if instagram %}
+	                    <li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+	                    {% endif %}
+	                </ul>
+	            </div>
+	            <div class="topbar-1-right">
+	                <ul>
+						{% if show_date == 1 %}
+						<li class="date"><i class="fas fa-calendar"></i> {{ 'now'|date('F j, Y') }}</li>
+						{% endif %}
+						{% if show_weather == 1 %}
+							{% if weather %}
+							<li class="weather">{{weather}} <span>℃</span>
+								<span>℉</span> &nbsp; {{country_name}}
+							</li>
+							{% endif %}
+						{% endif %}
+                    	{% if page.language %}
+	                    <li class="language">
+	                        {{page.language}}
+	                    </li>
+						{% endif %}
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="container">
+	    <div class="d-lg-flex justify-content-between text-center  align-items-center">
+	        <div class="logo-1"> 
+	            {{ page.header }}
+	        </div>
+	        <div class="ad d-sm-none d-lg-block d-none"> 
+	            {{ page.header_ad }}
+	        </div>
+	    </div> 
+	</div>
+	<div class="main-menu"> 
+	    <nav class="navbar navbar-expand-lg" id="navbar_top1">
+	      <div class="container">
+	        <div class="navbar-brand">
+	            {{ page.header }}
+	        </div>
+			<div class="d-flex justify-content-cener align-items-center">
+				<div class="d-flex justify-content-center align-items-center">
+					{% if page.search %}
+					<div class="mobile-search">
+						<ul class="header-1-menu-right" id="mobile-search">
+							<li class="searchbar">
+								<i><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.05 24.04"><title>search</title><path d="M17.74,16.33a10,10,0,1,0-1.41,1.41l6,6a1,1,0,0,0,1.41,0h0a1,1,0,0,0,0-1.41h0ZM10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18Z" transform="translate(0 0)"></path></svg></i>
+							</li>
+							<div class="togglesearch" style="display: none;">
+								<div class="togglesearch-1">
+									{{ page.search }}
+								</div>
+							</div>
+						</ul>    
+					</div>
+					{% endif %}
+					<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#main">
+						<div class="hamburger-toggle">
+							<div class="hamburger">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+					</button>
+				</div>
+				{% if show_hamburger == 1 %}
+				<ul class="info-menu-mobile">
+					<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal1-1"><i class="fas fa-info"></i></a></li>
+				</ul>
+				{% endif %}
+			</div>
+	         <div class="collapse navbar-collapse text-center" id="main">
+	            <ul class="navbar-nav nav_items">
+	                {{ page.primary_menu }}
+	            </ul>
+				<div class="d-flex align-items-center">
+					{% if page.search %}
+					<ul class="header-1-menu-right">
+						<li class="searchbar">
+							<i><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.05 24.04"><title>search</title><path d="M17.74,16.33a10,10,0,1,0-1.41,1.41l6,6a1,1,0,0,0,1.41,0h0a1,1,0,0,0,0-1.41h0ZM10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18Z" transform="translate(0 0)"></path></svg></i>
+						</li>
+						<div class="togglesearch" style="display: none;">
+							<div class="togglesearch-1">
+								{{ page.search }}
+							</div>
+						</div>
+					</ul>   
+					{% endif %}
+					{% if show_hamburger == 1 %}
+					<ul class="info-menu">
+						<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal1"><i class="fas fa-bars"></i></a></li>
+					</ul>  
+					{% endif %}
+				</div>                 
+	         </div> 
+	      </div>
+	    </nav>
+	</div>
+	<!-- Hamburger sidebar 1 -->
+	<div class="modal right fade" id="myModal1" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Hamburger sidebar mobile -->
+	<div class="modal right fade" id="myModal1-1" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Hamburger Sidebar End -->
+</header>
+<!-- End of header style 1 -->
+<!-- header style 2 -->
+<header id="header-2" class="{{active_2}} header_type">
+	<div class="topbar-1-wapper">
+		<div class="container">
+			<div class="topbar-wapper">
+				<div class="topbar-1-left">
+					<ul>
+						{% if show_date == 1 %}
+						<li class="date"><i class="fas fa-calendar"></i> {{ 'now'|date('F j, Y') }}</li>
+						{% endif %}
+						{% if show_weather == 1 %}
+							{% if weather %}
+							<li class="weather">{{weather}} <span>℃</span>
+								<span>℉</span> &nbsp; {{country_name}}
+							</li>
+							{% endif %}
+						{% endif %}
+					</ul>
+				</div>
+                {% if page.language %}
+				<div class="topbar-1-right">
+					<ul>
+						<li class="language">
+							{{page.language}}
+						</li>
+					</ul>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="d-lg-flex justify-content-between text-center align-items-center">
+			<div class="logo-2">
+    			{{ page.header }}
+			</div>
+			<div class="header-2-right">
+				<div class="ad">
+					{{ page.header_ad }}
+				</div>
+				{% if page.search %}
+				<div class="header-2-search">
+					<div class="header-1-menu-right">
+						<div class="searchbar">
+							<i>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.05 24.04">
+								<title>search</title>
+								<path d="M17.74,16.33a10,10,0,1,0-1.41,1.41l6,6a1,1,0,0,0,1.41,0h0a1,1,0,0,0,0-1.41h0ZM10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18Z" transform="translate(0 0)"></path>
+							</svg>
+							</i>
+						</div>
+						<div class="togglesearch" style="display: none;">
+							<div class="togglesearch-1">
+								{{page.search}}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="main-menu">
+		<nav class="navbar navbar-expand-lg" id="navbar_top2">
+			<div class="container">
+				<div>
+					{{page.header}}
+				</div>
+				<div class="d-lg-none d-flex">
+					<div class="navbar-toggler collapsed">
+						<div class="hamburger-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#main2" aria-expanded="false">
+							<div class="hamburger">
+							<span></span>
+							<span></span>
+							<span></span>
+							</div>
+						</div>
+					</div>
+					{% if show_hamburger == 1 %}
+					<ul class="info-menu-mobile">
+						<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal2-1"><i class="fas fa-info"></i></a></li>
+					</ul>  
+					{% endif %}
+				</div>
+				<div class="navbar-collapse text-center collapse" id="main2" style="">
+					{{page.primary_menu}}
+					<div class="header-2-right">
+						{% if facebook or twitter or instagram %}
+						<div class="header-2-social">
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+						{% endif %}
+						{% if show_hamburger == 1 %}
+						<ul class="info-menu">
+							<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal2">Menu<i class="fas fa-bars"></i></a></li>
+						</ul>  
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- Hamburger sidebar 2 -->
+	<div class="modal right fade" id="myModal2" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Hamburger sidebar 2 mobile -->
+	<div class="modal right fade" id="myModal2-1" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- End of header style 2 -->
+<!-- header style 3 -->
+<header id="header-3" class="{{active_3}} header_type">
+	<div class="topbar-1-wapper">
+		<div class="container">
+			<div class="topbar-wapper">
+				<div class="topbar-1-left">
+					<ul>
+						{% if show_date == 1 %}
+						<li class="date"><i class="fas fa-calendar"></i> {{ 'now'|date('F j, Y') }}</li>
+						{% endif %}
+						{% if show_weather == 1 %}
+							{% if weather %}
+							<li class="weather">{{weather}} <span>℃</span>
+								<span>℉</span> &nbsp; {{country_name}}
+							</li>
+							{% endif %}
+						{% endif %}
+					</ul>
+				</div>
+				<div class="topbar-1-right d-flex justify-content-center align-items-center">
+					{% if facebook or twitter or instagram %}
+					<div class="header-3-social">
+						<ul>
+							{% if facebook %}
+							<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+							{% endif %}
+							{% if twitter %}
+							<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+							{% endif %}
+							{% if instagram %}
+							<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+							{% endif %}
+						</ul>
+					</div>
+					{% endif %}
+                    {% if page.language %}
+					<div class="header-3-language">
+					  <ul>
+					    <li class="language">
+							{{page.language}}
+					    </li>
+					  </ul>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-menu-3">
+		<div class="main-menu">
+		<nav class="navbar navbar-expand-lg" id="navbar_top3">
+			<div class="container">
+			<div>
+				{{page.header}}
+			</div>
+			<div class="d-flex align-items-center">
+				<div class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#main3">
+					<div class="hamburger-toggle">
+						<div class="hamburger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+				{% if show_hamburger == 1 %}
+				<ul class="info-menu-mobile">
+					<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal3-1"><i class="fas fa-info"></i></a></li>
+				</ul>  
+				{% endif %}
+			</div>
+			<div class="collapse navbar-collapse" id="main3">
+				{{page.primary_menu}}
+				{% if show_hamburger == 1 %}
+				<ul class="info-menu">
+					<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal3"><i class="fas fa-bars"></i></a></li>
+				</ul>  
+				{% endif %}
+			</div>
+			</div>
+		</nav>
+		</div>
+    </div>
+	<!-- Hamburger sidebar 3 mobile -->
+	<div class="modal right fade" id="myModal3-1" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Hamburger sidebar 3 -->
+	<div class="modal right fade" id="myModal3" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- End of header style 3 -->
+<!-- header style 4 -->
+<header id="header-4" class="{{active_4}} header_type">
+	<div class="topbar-1-wapper">
+		<div class="container">
+			<div class="topbar-wapper">
+				<div class="topbar-1-left">
+					<ul>
+						{% if show_date == 1 %}
+						<li class="date"><i class="fas fa-calendar"></i> {{ 'now'|date('F j, Y') }}</li>
+						{% endif %}
+						{% if show_weather == 1 %}
+							{% if weather %}
+							<li class="weather">{{weather}} <span>℃</span>
+								<span>℉</span> &nbsp; {{country_name}}
+							</li>
+							{% endif %}
+						{% endif %}
+					</ul>
+				</div>
+                {% if page.language %}
+				<div class="topbar-1-right"> 
+					<div class="header-3-language">
+						<ul> 
+							<li class="language">
+								{{page.language}}
+							</li>
+						</ul>
+					</div>
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="main-menu">
+			<div class="header-4-left">
+				{% if facebook or twitter or instagram %}
+				<div class="header-4-social">
+					<ul>
+						{% if facebook %}
+						<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+						{% endif %}
+						{% if twitter %}
+						<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+						{% endif %}
+						{% if instagram %}
+						<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+						{% endif %}
+					</ul>
+				</div>
+				{% endif %}
+			</div>
+			<div class="header-4-center">
+				<div class="logo-2">
+					{{page.header}}
+				</div>
+			</div>
+			<div class="header-4-right">
+				{% if page.search %}
+				<div class="header-4-search">
+					<div class="searchbar">
+						<i>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.05 24.04">
+							<title>search</title>
+							<path d="M17.74,16.33a10,10,0,1,0-1.41,1.41l6,6a1,1,0,0,0,1.41,0h0a1,1,0,0,0,0-1.41h0ZM10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18Z" transform="translate(0 0)"></path>
+						</svg>
+						</i>
+					</div>
+					<div class="togglesearch" style="display: none;">
+						<div class="togglesearch-1">
+							{{page.search}}
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% if show_hamburger == 1 %}
+				<ul class="info-menu">
+					<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal4-1">Menu <i class="fas fa-bars"></i></a></li>
+				</ul>  
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="nav-menu">
+			<nav class="navbar navbar-expand-lg" id="navbar_top4">
+				<div class="container">
+					{{page.header}}
+					<div class="d-lg-none d-flex align-items-center">
+						<div class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#main4">
+							<div class="hamburger-toggle">
+								<div class="hamburger">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+							</div>
+						</div>
+						{% if show_hamburger == 1 %}
+						<ul class="info-menu-mobile">
+							<li><a href="#" data-bs-toggle="modal" data-bs-target="#myModal4"><i class="fas fa-info"></i></a></li>
+						</ul>  
+					</div>
+					{% endif %}
+					<div class="collapse navbar-collapse" id="main4">
+						{{page.primary_menu}}
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- Hamburger sidebar 4 mobile-->
+	<div class="modal right fade" id="myModal4" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+					<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Hamburger sidebar 4 -->
+	<div class="modal right fade" id="myModal4-1" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close model-btn-info" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+					</button>
+					{% if contact_title %}
+					<div class="info-content">
+					<h3>{{contact_title}}</h3>
+					<p>{{contact_description}}</p>
+					{% endif %}
+					{% if mail_address or ph_number %}
+					<div class="contact-call-info">
+						{% if mail_address %}
+						<ul>
+							<li>
+								<i>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.16 19.81">
+									<title>mail</title>
+									<path d="M24.58,6.09H7.42a4,4,0,0,0-4,4V21.91a4,4,0,0,0,4,4H24.58a4,4,0,0,0,4-4V10.09A4,4,0,0,0,24.58,6.09Zm2,15.82a2,2,0,0,1-2,2H7.42a2,2,0,0,1-2-2V10.09a2,2,0,0,1,2-2H24.58a2,2,0,0,1,2,2ZM24.16,10.4a1,1,0,0,1,0,1.41l-6.06,5.74a3,3,0,0,1-4.12,0L7.88,11.81a1,1,0,0,1,1.35-1.47l0,0,6.05,5.74a1,1,0,0,0,1.38,0l6-5.74a1,1,0,0,1,1.42,0Z" transform="translate(-3.42 -6.09)"></path>
+								</svg>
+								</i>{{mail_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="mailto:{{mail_address}}" title="{{mail_address}}">{{mail_address}}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% if ph_number %}
+						<ul>
+							<li>
+								<i>
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+									<title>call</title>
+									<path class="st0" d="M8.7,10C6.9,8.7,5.3,7.1,4,5.3l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-1.9-2C3-0.1,2.3-0.1,1.8,0.3
+									L0.4,1.7c-2.8,2.8,9,14.7,11.8,11.9l1.4-1.4c0.4-0.4,0.4-1.2,0-1.6c0,0,0,0,0,0l-2-2c-0.4-0.4-1.1-0.4-1.6,0c0,0,0,0,0,0L8.7,10z">
+									</path>
+								</svg>
+								</i>{{ph_title}}
+							</li>
+							<li>
+								<span></span>
+								<a href="tel:{{ph_number}}" title="{{ph_number}}">{{ph_number}}</a>
+							</li>
+						</ul>
+						{% endif %}
+					</div>
+					{% endif %}
+					{% if facebook or twitter or instagram %}
+					<div class="header-4-left">
+						<div class="header-4-social">
+						<h3>{{social_links_title}}</h3>
+							<ul>
+								{% if facebook %}
+								<li><a href="{{facebook}}" title="facebook"> <i class="fab fa-facebook-f"></i> </a></li>
+								{% endif %}
+								{% if twitter %}
+								<li><a href="{{twitter}}" title="twitter"> <i class=" fab fa-twitter"></i> </a></li>
+								{% endif %}
+								{% if instagram %}
+								<li><a href="{{instagram}}" title="instagram"> <i class=" fab fa-instagram"></i> </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- End of header style 4 -->
+<!-- Header End -->

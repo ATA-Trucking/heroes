@@ -1,0 +1,10 @@
+<div class="sidebar-content">
+{% for row in rows %}
+	{% if loop.last or loop.first %}
+		{{ row.content }}
+	{% else %}
+		{{row.content}}
+		<hr>
+	{% endif %}
+{% endfor %}
+</div>

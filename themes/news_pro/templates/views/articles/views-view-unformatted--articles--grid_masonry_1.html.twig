@@ -1,0 +1,19 @@
+<div id="news-masonry-1">
+	<div class="news-masonry-style-1 masonry">  
+		{% for row in rows %}
+			{% if loop.index % 2 == 0 %}
+			<div class="col-12 col-md-6 col-lg-6 mb-4 wow fadeInUp"  data-wow-duration=".5s" data-wow-delay=".15s">
+    			<div class="shortcode-blog-style-3 item height-2">
+					{{ row.content }}
+				</div>
+			</div>
+			{% else %}
+			<div class="col-12 col-md-6 col-lg-6 mb-4 wow fadeInUp"  data-wow-duration=".5s" data-wow-delay=".15s">
+    			<div class="shortcode-blog-style-3 item">
+					{{ row.content }}
+				</div>
+			</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

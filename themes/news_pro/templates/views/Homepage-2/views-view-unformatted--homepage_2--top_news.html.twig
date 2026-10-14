@@ -1,0 +1,17 @@
+<div id="home-2-top-news">
+	<div class="tab-style-2  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s; animation-name: fadeInUp;"> 
+	{% for row in rows %}
+		{% if loop.index == 2 %}
+		<div class="footer-tab">
+			<div class="row gx-2">
+				{{ row.content }}
+		{% elseif loop.last %}
+			{{ row.content }}
+			</div>
+		</div>
+		{% else %}
+			{{row.content}}
+		{% endif %}
+	{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,116 @@
+{% set type = content.field_layout_style.0['#markup'] %}
+{% if type == "classic" %}
+<section class="sec-pad-t-80 sec-pad-b-0" id="post-classic-1">
+	<div class="container">
+		<div class="row justify-content-center align-content-center">
+			<div class="col-12 col-lg-8 page-title-classic">
+				<div class="post-classic-title wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+					<h6>{{content.field_categories.0['#title']}}</h6>
+					<h3>{{node.label}}</h3>
+					<h6 class="date">{{node.getCreatedTime|format_date('custom','F d, Y')}} <!--<span class="dot"></span> {{node.Owner.name.value}}--></h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid gx-0 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+		<div class="post-classic-img ">
+			<img src="{{file_url(content.field_banner_image['#items'].entity.uri.value)}}" alt="{{content.field_banner_image['#items'].alt}}">
+		</div>
+	</div>
+</section>
+{% elseif type == "gallery" %}
+<section class="sec-pad-170 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" id="carousel-6" style="background-image: url({{file_url(content.field_banner_image['#items'].entity.uri.value)}});">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="item" style="position: relative;">
+					<div class="row justify-content-center">
+						<div class="col-12 col-md-12 col-lg-9">
+							<div class="carousel-6-wapper">
+								<div class="carousel-6-title">
+									<h4>{{content.field_categories.0['#title']}}</h4>
+									<h2>{{node.label}}</h2>
+								</div>
+								<div class="carousel-6-date">
+									<h5>{{node.getCreatedTime|format_date('custom','F d, Y')}}  <!--<span class="dot"></span> {{node.Owner.name.value}}--></h5>
+								</div>
+							</div>
+						</div> 
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% else %}
+<section class="video-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" id="audio-video" style="background-image: url({{file_url(content.field_banner_image['#items'].entity.uri.value)}})">
+	<div class="container">
+		<div class="row justify-content-center gx-0"> 
+			<div class="col-md-12 col-lg-11">
+				<div class="video-style-2-wapper">
+					<div class="video-2-title">
+						<h3>{{content.field_categories.0['#title']}}</h3>
+						<h2>{{node.label}}</h2>
+						<div class="video-2-date">
+							<h5>{{node.getCreatedTime|format_date('custom','F d, Y')}} <!--<span class="dot"></span> {{node.Owner.name.value}}--></h5>
+						</div>
+						<a data-fancybox="" title="{{content.field_video_link.0['#title']}}" href="{{content.field_video_link.0['#url']}}"> 
+							<div class=" video-style-2">  
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 24v-24l20 12-20 12z"></path></svg>
+							</div> 
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}
+<!--- Content -->
+<section class="sec-pad-t-60" id="post-classic"> 
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="post-classic-social wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+				{{share}}
+			</div>
+			<div class="col-12 col-lg-10">
+				{{content.body.0}}
+				{{content.field_section}}
+				{{content.field_content.0}}
+				{{content.field_form}}
+				{% if tags %}
+					{{tags}}
+				{% endif %}
+				<div class="social-post-left-right-details">
+					<div class="row">
+						<div class="col-12 col-lg-1 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+							<h4>Share</h4>
+						</div>
+						<div class="col-12 col-lg-11 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+							{{share}}
+						</div>
+					</div>
+				</div>
+				{#
+				{% if google_ad %}
+				<div class="col-9 mx-auto">
+					{{ google_ad }}
+				{% endif %}
+				</div>
+				#}
+				{% if pager %}
+					{{pager}}
+				{% endif %}
+				{% if content.comment[0] %}
+					<div class="d-flex justify-content-center align-items-center wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+						<h3 class="comments">Comments</h3>
+					</div>
+					{% if comment_count == 0 %}
+						<p class="text-center">No comments to display</p>
+					{% endif %}
+					{{content.comment}}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

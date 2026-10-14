@@ -1,0 +1,15 @@
+<div id="editor-pick">
+	<div class="row gx-4-1">
+		{% for row in rows %}
+			{% if loop.index <= 2 %}
+			<div class="col-12 col-md-6 col-lg-6 mb-4">
+				{{ row.content }}
+			</div>
+			{% else %}
+			<div class="col-12 col-md-6 col-lg-6">
+				{{row.content}}
+			</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

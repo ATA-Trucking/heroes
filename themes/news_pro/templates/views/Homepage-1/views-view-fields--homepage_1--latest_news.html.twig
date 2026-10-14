@@ -1,0 +1,26 @@
+{% if fields.counter.content == '1' or fields.counter.content == '2' %}
+<div class="card mb-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <div class="row g-0">
+        <div class="col-md-12">
+            <div class="lastest-news-img">
+                <a href="{{ fields.view_node.content}}" title="{{fields.title.content}}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}" /></a>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="lastest-news card-body"> <a href="{{ fields.view_node.content}}" title="{{fields.title.content}}"><h5>{{fields.title.content}}</h5></a>
+                <p class="card-text"><small class="text-muted">{{ fields.created.content }}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="card wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <div class="row g-0">
+        <div class="col-md-12">
+            <div class="lastest-news card-body"> <a href="{{ fields.view_node.content}}" title="{{fields.title.content}}"><h5>{{fields.title.content}}</h5></a>
+                <p class="card-text"><small class="text-muted">{{ fields.created.content }}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

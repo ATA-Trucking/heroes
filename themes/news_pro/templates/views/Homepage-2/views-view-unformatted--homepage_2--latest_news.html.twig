@@ -1,0 +1,10 @@
+<div id="latest-news">
+	{% for row in rows %}
+		{% if loop.last %}
+			{{ row.content }}
+		{% else %}
+			{{ row.content }}
+			<hr>
+		{% endif %}
+	{% endfor %}
+</div>

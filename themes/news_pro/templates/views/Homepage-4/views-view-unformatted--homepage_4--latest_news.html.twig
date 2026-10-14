@@ -1,0 +1,42 @@
+<div class="home-4-trending-news">	
+	<div class="row gx-4-2 mt-4">
+	{% for row in rows %}
+		{% if loop.index % 7 == 1 %}
+			<div class="col-12 col-lg-8">
+        <div class="row gx-4">
+					{{ row.content }}
+		{% elseif loop.index % 7 == 2 %}
+        <div class="col-12 col-lg-5 mb-lg-0 mb-md-4 mb-4 trend-new-side">
+          <div class="row">
+            {{row.content}}
+          {% if loop.last and loop.index % 7 == 2 %}
+              </div>
+            </div>
+          </div>
+          </div>
+          {% endif %}
+    {% elseif loop.index % 7 == 3 %}
+            {{row.content}}
+              </div>
+            </div>
+          </div>
+          </div>
+    {% elseif loop.index % 7 == 4 %}
+        <div class="col-12 col-md-12 col-lg-4">
+          {{row.content}}
+          {% if loop.last and loop.index % 7 == 4 %}
+          </div>
+          {% else %}
+          <hr>
+          {% endif %}
+    {% else %}
+          {{row.content}}
+          {% if loop.last %}
+          </div>
+          {% else %}
+          <hr>
+          {% endif %}
+		{% endif %}
+	{% endfor %}
+	</div>
+</div>

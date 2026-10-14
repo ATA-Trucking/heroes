@@ -1,0 +1,23 @@
+<div class="tab-style-3  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;"> 
+	<div class="row gx-2">
+	{% for row in rows %}
+		{% if loop.index == 1 %}
+		<div class="col-12 col-lg-9 mb-2">
+			{{ row.content }}
+		</div>
+		{% else %}
+			{% if loop.index == 2 %}
+			<div class="col-12 col-lg-3">
+				<div class="row">
+					{{row.content}}
+			{% elseif loop.index == 3 %}
+					{{row.content}}
+				</div>
+			</div>
+			{% else %}
+				{{row.content}}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	</div>
+</div>

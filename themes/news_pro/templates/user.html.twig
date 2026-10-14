@@ -1,0 +1,444 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+<article{{ attributes }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</article>
+
+<section class="sec-pad-90">
+  <div class="container">
+        
+       <div class="row">
+           <div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+               <h2>Button Style 1</h2>
+             </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-primary mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-primary mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-primary" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-secondary mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-secondary mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-secondary" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-info mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-info mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-info" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-success mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-success mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-success" href="#" title="Button">Button</a>
+           </div>                    
+       </div>
+       <div class="section-divider wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+<div class="code-block"> 
+   <pre class="language-markup">                
+   <code id="button-code-1" class="language-html" data-lang="html">
+   &lt;div class="row mb-5"&gt;
+       &lt;div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;
+           &lt;h2&gt;Button Style 1&lt;/h2&gt; &lt;/div&gt;
+       &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-primary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+           &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-primary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-primary" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+           &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-secondary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-secondary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+           &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-secondary" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+       &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-info mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+           &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-info mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-info" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+           &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-success mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-success mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+           &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-success" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+   &lt;/div&gt;                          
+   </code>                          
+                               <button class="clipboard" data-clipboard-action="copy" data-clipboard-target="#button-code-5" tabindex="-1">Copy to clipboard</button>
+                       </pre> 
+                   </div>
+</div> 
+       <div class="row">
+           <div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+               <h2>Button Style 2</h2>
+             </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-primary btn-radius mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-primary btn-radius mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-primary btn-radius " href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-secondary btn-radius mb-3 " href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-secondary btn-radius mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-secondary btn-radius " href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-info btn-radius mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-info btn-radius mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-info btn-radius" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-success btn-radius mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-success btn-radius mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-success btn-radius" href="#" title="Button">Button</a>
+           </div>                    
+       </div> 
+       <div class="section-divider wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+<div class="code-block"> 
+   <pre class="language-markup">                
+                               <code id="button-code-2" class="language-html" data-lang="html">
+                               &lt;div class="row mb-5"&gt;
+                                   &lt;div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;
+                                       &lt;h2&gt;Button Style 1&lt;/h2&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-primary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-primary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-primary" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-secondary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-secondary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-secondary" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-info mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-info mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-info" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-success mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-success mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-success" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                               &lt;/div&gt;
+                               </code>
+                               <button class="clipboard" data-clipboard-action="copy" data-clipboard-target="#button-code-2" tabindex="-1">Copy to clipboard</button>
+                       </pre> 
+                   </div>
+</div> 
+       <div class="row">
+           <div class="heading-1">
+               <h2>Button Style 3</h2>
+             </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-primary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-primary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-primary btn-radius-5" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-secondary btn-radius-5 mb-3 " href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-secondary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-secondary btn-radius-5" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-info btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-info btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-info btn-radius-5" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-success btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-success btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-success btn-radius-5" href="#" title="Button">Button</a>
+           </div>                    
+       </div> 
+       <div class="section-divider wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+<div class="code-block"> 
+   <pre class="language-markup">                
+                               <code id="button-code-3" class="language-html" data-lang="html">
+                               &lt;div class="row mb-5"&gt;
+                                   &lt;div class="heading-1"&gt;
+                                       &lt;h2&gt;Button Style 3&lt;/h2&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-primary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-primary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-primary btn-radius-5" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-secondary btn-radius-5 mb-3 " href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-secondary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-secondary btn-radius-5" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-info btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-info btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-info btn-radius-5" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-success btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-success btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-success btn-radius-5" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                               &lt;/div&gt;
+                               </code>
+                               <button class="clipboard" data-clipboard-action="copy" data-clipboard-target="#button-code-3" tabindex="-1">Copy to clipboard</button>
+                       </pre> 
+                   </div>
+</div>
+       <div class="row">
+           <div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+               <h2>Button Style 4</h2>
+             </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-primary  mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-primary mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-primary mb-3" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-secondary mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-secondary mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-secondary mb-3" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-info  mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-info mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-info mb-3" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-black mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-black mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-black" href="#" title="Button">Button</a>
+           </div>                    
+       </div>   
+       <div class="section-divider wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+<div class="code-block"> 
+   <pre class="language-markup">                
+                               <code id="button-code-4" class="language-html" data-lang="html">
+                               &lt;div class="row mb-5"&gt;
+                                   &lt;div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;
+                                       &lt;h2&gt;Button Style 4&lt;/h2&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-primary  mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-primary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-primary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-secondary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-secondary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-secondary mb-3" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-info  mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-info mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-info mb-3" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-black mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-black mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-black" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                               &lt;/div&gt;
+                               </code>
+                               <button class="clipboard" data-clipboard-action="copy" data-clipboard-target="#button-code-4" tabindex="-1">Copy to clipboard</button>
+                       </pre> 
+                   </div>
+</div>
+       <div class="row">
+           <div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+               <h2>Button Style 5</h2>
+             </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-primary btn-radius-5  mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-primary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-primary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-secondary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-secondary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-secondary btn-radius-5 mb-3" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-info btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-info btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-info btn-radius-5 mb-3" href="#" title="Button">Button</a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-outline-black btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-outline-black btn-radius-5 mb-3" href="#" title="Button">Button</a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-outline-black btn-radius-5" href="#" title="Button">Button</a>
+           </div>                    
+       </div> 
+       <div class="section-divider wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+<div class="code-block"> 
+   <pre class="language-markup">                
+                               <code id="button-code-5" class="language-html" data-lang="html">
+                               &lt;div class="row mb-5"&gt;
+                                   &lt;div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;
+                                       &lt;h2&gt;Button Style 5&lt;/h2&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-primary btn-radius-5  mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-primary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-primary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-secondary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-secondary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-secondary btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-info btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-info btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-info btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                                   &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt; &lt;a class="btn btn-sm btn-outline-black btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-md btn-outline-black btn-radius-5 mb-3" href="#" title="Button"&gt;Button&lt;/a&gt;
+                                       &lt;div class="clearfix"&gt;&lt;/div&gt; &lt;a class="btn btn-lg btn-outline-black btn-radius-5" href="#" title="Button"&gt;Button&lt;/a&gt; &lt;/div&gt;
+                               &lt;/div&gt;
+                               </code>
+                               <button class="clipboard" data-clipboard-action="copy" data-clipboard-target="#button-code-5" tabindex="-1">Copy to clipboard</button>
+                       </pre> 
+                   </div>
+</div>
+       <div class="row">
+           <div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+               <h2>Button Style 6</h2>
+             </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-primary btn-icon mb-3" href="#" title="Button">Button 
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-primary btn-icon mb-3" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-primary btn-icon" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-secondary btn-icon mb-3" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-secondary btn-icon mb-3" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-secondary btn-icon" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-info btn-icon mb-3" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-info btn-icon mb-3" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-info btn-icon" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+           </div>
+           <div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">    
+               <a class="btn btn-sm btn-success btn-icon mb-3" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-md btn-success btn-icon mb-3" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+               <div class="clearfix"></div>
+               <a class="btn btn-lg btn-success btn-icon" href="#" title="Button">Button <svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429">
+                  <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"></path>
+                </svg></a>
+           </div>                    
+       </div>   
+       <div class="section-divider wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s">
+<div class="code-block"> 
+   <pre class="language-markup">                
+                               <code id="button-code-6" class="language-html" data-lang="html">
+      &lt;div class="row"&gt;
+        &lt;div class="heading-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;
+            &lt;h2&gt;Button Style 6&lt;/h2&gt;
+          &lt;/div&gt;
+        &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;    
+            &lt;a class="btn btn-sm btn-primary btn-icon mb-3" href="#" title="Button"&gt;Button 
+              &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-md btn-primary btn-icon mb-3" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-lg btn-primary btn-icon" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;    
+            &lt;a class="btn btn-sm btn-secondary btn-icon mb-3" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-md btn-secondary btn-icon mb-3" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-lg btn-secondary btn-icon" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;    
+            &lt;a class="btn btn-sm btn-info btn-icon mb-3" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-md btn-info btn-icon mb-3" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-lg btn-info btn-icon" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="col-12 col-sm-6 col-lg-3 my-3 mb-lg-0 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s"&gt;    
+            &lt;a class="btn btn-sm btn-success btn-icon mb-3" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-md btn-success btn-icon mb-3" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+            &lt;div class="clearfix"&gt;&lt;/div&gt;
+            &lt;a class="btn btn-lg btn-success btn-icon" href="#" title="Button"&gt;Button &lt;svg xmlns="http://www.w3.org/2000/svg" width="30" height="51.429" viewBox="0 0 30 51.429"&gt;
+                &lt;path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M25.724,9.044,45.17,28.9a3.609,3.609,0,0,0,5.191,0,3.836,3.836,0,0,0,0-5.311L28.327,1.092A3.616,3.616,0,0,0,23.259.983L1.072,23.572a3.826,3.826,0,0,0,0,5.311,3.609,3.609,0,0,0,5.191,0Z" transform="translate(30) rotate(90)"/&gt;
+              &lt;/svg&gt;&lt;/a&gt;
+        &lt;/div&gt;                    
+    &lt;/div&gt;
+                               </code>
+                               <button class="clipboard" data-clipboard-action="copy" data-clipboard-target="#button-code-6" tabindex="-1">Copy to clipboard</button>
+                       </pre> 
+                   </div>
+</div>           
+  </div>           
+</section>

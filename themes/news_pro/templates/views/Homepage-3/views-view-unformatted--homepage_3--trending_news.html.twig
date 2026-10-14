@@ -1,0 +1,26 @@
+<div id="home-3-trending-news">
+	<div class="row mb-4 mt-4">
+	{% for row in rows %}
+		{% if loop.index % 6 == 1 %}
+			<div class="col-12 col-lg-4 order-2-md">
+				{{ row.content }}
+		{% elseif loop.index % 6 == 4 %}
+				{{row.content}}
+			</div>
+		{% elseif loop.index % 6 == 5 %}
+			<div class="col-12 col-lg-8">
+				<div class="row gx-4-1">
+					{{row.content}}
+		{% elseif loop.index % 6 == 0 or loop.last %}
+					{{row.content}}
+				</div>
+			</div>
+		{% else %}
+				{{row.content}}
+		{% endif %}
+	{% endfor %}
+	</div>
+</div>
+<div>
+	<hr>
+</div>

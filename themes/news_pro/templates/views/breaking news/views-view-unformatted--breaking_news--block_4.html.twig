@@ -1,0 +1,20 @@
+<section id="header-4-news-ticker">
+	<div class="container">
+		<div class="d-lg-flex d-md-block justify-lg-content-between   align-items-center">
+			<div class="col-12 col-md-12 col-lg-2">
+				<div class="header-1-news-ticker-title">
+					<h6>{{view.getTItle()}}</h6>
+				</div>
+			</div>
+			<div class="col-12 col-md-12 col-lg-10">
+				<div class="header-1-news-ticker-wapper">
+					<div class="owl-carousel owl-theme  owl-loaded news-ticker">
+						{% for row in rows %}
+							{{ row.content }}
+						{% endfor %}
+					</div>
+				</div>
+			</div> 
+		</div>
+	</div>
+</section>

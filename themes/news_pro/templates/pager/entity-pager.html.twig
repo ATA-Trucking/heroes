@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an entity pager.
+ *
+ * The list of items are presented next to each other in a usable way using
+ * minimalist amount of CSS (see entity_pager.css).
+ *
+ * Available variables:
+ * - count_word: The word to use for the count of items.
+ * - links: An array of links to render:
+ *   - prev: Link to previous node.
+ *   - all_link: Link to All listing group of records.
+ *   - next: Link to next node in the sequence.
+ *   - count: Count of number of nodes in the group.
+ *
+ * @see template_preprocess_views_view_entity_pager()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'views-view-entity-pager',
+    'entity-pager',
+    'page-nav-classic-wapper',
+    'count-word-' ~ count_word
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+    {% for key, link in links %}
+      {% if link %}
+        {% if key == "prev" %}
+        <div class="page-nav-classic-pre wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+            <ul class="entity-pager-item entity-pager-item-{{ key }}">
+                <li><a href="{{link['#url']}}" title="Previous News"><i class="fas fa-chevron-left"></i></a></li>
+                <li> <a href="{{link['#url']}}" title="Previous News">Previous News</a></li>
+            </ul>
+        </div>
+        {% else %}
+        <div class="page-nav-classic-next wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+            <ul class="entity-pager-item entity-pager-item-{{ key }}">
+                <li> <a href="{{link['#url']}}" title="Next News">Next News</a></li>
+                <li><a href="{{link['#url']}}" title="Next News"><i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+        </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+</div>

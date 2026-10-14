@@ -1,0 +1,61 @@
+{% if paragraph.field_style.value == 'style-1' %}
+	{% if content.field_title.0 %}
+	<div class="category-page-title">
+		<h2>{{content.field_title.0}}</h2>
+	</div>
+	<div>
+		<hr>
+	</div>
+	{% endif %}
+	{{ content.field_view }}
+{% elseif paragraph.field_style.value == 'style-2' %}
+<div class="sidebar-style-2">
+	{% if content.field_title.0 %}
+	<div class="tab-style-2-wapper">
+		<div class="tab-2-title  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+			<h2>{{content.field_title.0}}</h2>
+		</div>
+	</div>
+	{% endif %}
+	{{ content.field_view }}
+</div>
+{% elseif paragraph.field_style.value == 'style-3' %}
+<div class="sidebar-style-3">
+	{% if content.field_title.0 %}
+	<div class="video heading-3 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+		<h2>{{content.field_title.0}}</h2>
+	</div>
+	<div>
+		<hr>
+	</div>
+	{% endif %}
+    {{ content.field_view }}
+</div>
+{% elseif paragraph.field_style.value == 'style-4' %}
+	<div class="sidebar-style-4 mb-5 home-4categories">
+		<div class="home-4">
+			{% if content.field_title.0 %}
+				<div class="tab-style-1-wapper">
+					<div class="home-4-title wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+						<h2>{{content.field_title.0}}</h2>
+					</div>
+				</div>
+				<div>
+					<hr>
+				</div>
+			{% endif %}
+		</div>
+    	{{ content.field_view }}
+	</div>
+{% else %}
+	<div class="sidebar-style-5">
+		<div class="sidebar">
+			{% if content.field_title.0 %}
+			<div class="sidebar-title">
+				<h5><span>{{content.field_title.0}}</span></h5> 
+			</div>
+			{{ content.field_view }}	
+			{% endif %}
+		</div>
+	</div>
+{% endif %}

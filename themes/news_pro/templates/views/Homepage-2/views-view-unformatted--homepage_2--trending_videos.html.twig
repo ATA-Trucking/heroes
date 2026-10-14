@@ -1,0 +1,29 @@
+<div id="home-2-trending-video">
+	<div class="row">
+	{% for row in rows %}
+		{% if loop.index == 1 %}
+			<div class="col-12 col-md-12 col-lg-8  wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+				{{ row.content }}
+			</div>
+		{% else %}
+			{% if loop.index == 2%}
+			<div class="col-12 col-md-12 col-lg-4">
+				<div class="row">
+					<div class="col-12 mb-3 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;"> 
+						{{row.content}}
+					</div>
+			{% elseif loop.last %}
+					<div class="col-12 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;"> 
+						{{row.content}}
+					</div>
+				</div>
+			</div>
+			{% else %}
+			<div class="col-12 mb-3 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;"> 
+				{{row.content}}
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	</div>
+</div>

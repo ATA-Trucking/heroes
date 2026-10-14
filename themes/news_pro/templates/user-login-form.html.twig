@@ -1,0 +1,39 @@
+{% set base_url = url('<front>')  %}
+<section class="sec-pad-90" id="login">
+  <div class="container">
+      <div class="row justify-content-center align-items-center">
+           <div class="col-12 col-lg-8">
+               <div class="wapper-login-reister">
+                   <div class="login-reister-title">
+                       <h2>{{ login_title }}</h2>
+                       <p>{{login_content}}</p>
+                   </div>
+                   <div class="form-3 mt-5">
+                      <form action="#" method="post">
+                          <div class="row g-4">
+                              <div class="col-12 col-md-12">
+                                {{ form.name }}
+                              </div>
+                              <div class="col-12 col-md-12">
+                                {{ form.pass }}
+                              </div>
+                            </div>
+                           <div class="d-flex d-block align-items-center mt-5">
+                            {{ form.actions }}
+                            <a href="{{ base_url }}user/password" title="password" class="forgot-pwd">Forgot Password?</a>
+                           </div>
+                          {{ form.form_build_id }}
+                          {{ form.form_id }}
+                      </form>
+                  </div>
+                  <div>
+                      <hr>
+                  </div>
+                 <div class="d-flex justify-content-center mt-4-1">
+                  <a href="{{ base_url }}user/register" title="password" class="forgot-pwd">Don't Have an Account? <span>Signup</span></a>
+                 </div>
+               </div>
+           </div>
+      </div>
+  </div> 
+</section>

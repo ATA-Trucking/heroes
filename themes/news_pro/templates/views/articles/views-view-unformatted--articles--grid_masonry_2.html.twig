@@ -1,0 +1,19 @@
+<div id="news-masonry-2">
+	<div class="news-masonry-style-2 masonry">  
+		{% for row in rows %}
+			{% if loop.index == 2 or loop.index == 6 or loop.index == 9  %}
+				<div class="col-12 col-md-6 col-lg-4 my-3 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s">
+					<div class="shortcode-blog-style-3 item height-1">
+						{{ row.content }}
+					</div>
+				</div>
+			{% else %}
+				<div class="col-12 col-md-6 col-lg-4 my-3 wow fadeInUp"  data-wow-duration=".5s" data-wow-delay=".15s">
+					<div class="shortcode-blog-style-3 item">
+						{{ row.content }}	
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

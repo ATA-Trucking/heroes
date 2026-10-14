@@ -1,0 +1,38 @@
+{% if fields.counter.content == '1' %}
+<div class="col-12 col-lg-12 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+    <div class="tab-style-3-content-wapper">
+        <div class="tab-style-3-img">
+            <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}"/>
+            </a>
+        </div>
+        <div class="tab-style-3-content">
+            <div class="tab-style-3-tag">
+                <ul>
+                    <li class="tag"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 30"><title>tag</title><path d="M26,1H6A1,1,0,0,0,5,2V7H18a1,1,0,0,1,0,2H5V30a1,1,0,0,0,1.51.86L16,25.17l9.49,5.69A1,1,0,0,0,26,31a1,1,0,0,0,.49-.13A1,1,0,0,0,27,30V2A1,1,0,0,0,26,1Z" transform="translate(-5 -1)"></path></svg></i>{{ fields.field_categories.content }}</li>
+                    <li class="date"><i class="fas fa-calendar"></i> {{ fields.created.content }}</li>
+                </ul> 
+            </div>
+            <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h4>{{ fields.title.content }}</h4></a>
+        </div>
+    </div>
+</div> 
+{% else %}
+<div class="col-12 col-lg-12 mt-4 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+    <div class="card home-3-latest-news-1">
+        <div class="row g-3">
+            <div class="col-md-5">
+                <div class="home-1-card-img">
+                    <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><img src="{{ fields.field_image.content}}" class="img-fluid" alt="{{ fields.field_image_1.content }}"/></a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h6 class="card-title mt-lg-0 mt-md-2"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 30"><title>tag</title><path d="M26,1H6A1,1,0,0,0,5,2V7H18a1,1,0,0,1,0,2H5V30a1,1,0,0,0,1.51.86L16,25.17l9.49,5.69A1,1,0,0,0,26,31a1,1,0,0,0,.49-.13A1,1,0,0,0,27,30V2A1,1,0,0,0,26,1Z" transform="translate(-5 -1)"></path></svg></i><span>{{ fields.field_categories.content }} </span><span class="date"><i class="fas fa-calendar"></i> {{ fields.created.content }} </span></h6> 
+                    <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h3>{{ fields.title.content }}</h3></a>  
+                    <p>{{fields.body.content}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

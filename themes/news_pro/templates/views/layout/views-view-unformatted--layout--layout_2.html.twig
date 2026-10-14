@@ -1,0 +1,28 @@
+<section class="sec-pad-b-100 wow fadeInLeft" id="carousels-3" data-wow-duration=".75s" data-wow-delay=".15s">
+	<div class="container">
+		<div class="owl-carousel owl-theme owl-nav-right  carousels-2">
+			{% for row in rows %}
+				{% if loop.index % 5 == 1 %}
+					<div class="item">
+                 		<div class="row gx-2">
+						 	{{row.content}}
+				{% else %}
+					{% if loop.index % 5 == 2 %}
+					<div class="col-12 col-md-12 col-lg-6">
+						<div class="row gx-2">
+							{{row.content}}
+					{% elseif loop.last or loop.index % 5 == 0 %}
+							{{row.content}}
+							</div>
+						</div>
+					</div>
+					</div>
+					{% else %}
+						{{row.content}}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+     

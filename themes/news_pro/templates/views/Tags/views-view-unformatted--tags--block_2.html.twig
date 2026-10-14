@@ -1,0 +1,46 @@
+<div class="tab-style-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+	<ul class="nav nav-tabs text-center" role="tablist">
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+		</li>
+		{% for row in rows %}
+			{{ row.content }}
+		{% endfor %}
+	</ul>
+</div>
+<div class="tab-style-1-wapper wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+	<div class="tab-1-title">
+		<h1>Top News</h1> 
+	</div>
+	<div class="tab-style-1 wow fadeInUp" data-wow-duration=".75s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.75s; animation-delay: 0.15s;">
+		<ul class="nav nav-tabs text-center" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="fashion-tab" data-bs-toggle="tab" data-bs-target="#fashion" type="button" role="tab" aria-selected="false">Fashion</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="travel-tab" data-bs-toggle="tab" data-bs-target="#travel" type="button" role="tab" aria-controls="travel" aria-selected="false">Travel</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="sport-tab" data-bs-toggle="tab" data-bs-target="#sport" type="button" role="tab" aria-controls="sport" aria-selected="false">Sport</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="health-tab" data-bs-toggle="tab" data-bs-target="#health" type="button" role="tab" aria-controls="health" aria-selected="false">Health</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#business" type="button" role="tab" aria-controls="business" aria-selected="false">Business</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="technology-tab" data-bs-toggle="tab" data-bs-target="#technology" type="button" role="tab" aria-controls="technology" aria-selected="false">Technology</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" data-bs-toggle="tab" data-bs-target="#food" type="button" role="tab" aria-controls="food" aria-selected="false">Food</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="contact-tab1" data-bs-toggle="tab" data-bs-target="#entertainment" type="button" role="tab" aria-controls="entertainment" aria-selected="false">Entertainment</button>
+			</li>
+		</ul>
+	</div>
+</div>

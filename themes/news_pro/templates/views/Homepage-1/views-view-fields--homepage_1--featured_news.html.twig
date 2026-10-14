@@ -1,0 +1,31 @@
+{% if fields.counter.content == '1' %}
+<div class="featured-news-news-top-news-img wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <a href="{{ fields.view_node.content}}" title="Featured News"><img src="{{ fields.field_image.content}}" alt="{{ fields.field_image_1.content}}"></a>
+</div>
+<div class="featured-news-news-top-news-content wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <div class="featured-news-news-top-news-content-top">
+        <h5>{{fields.field_categories.content}}</h5> <a href="{{ fields.view_node.content}}" title="Featured News"><h3>{{ fields.title.content }}</h3></a>
+        <h5><span>{{ fields.created.content }}</span></h5> </div>
+    <div class="featured-news-news-top-news-content-body">
+        <p>{{fields.body.content}}</p> <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}" class="home-1-link">{{fields.nothing.content}} <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 694.78 296.45"><defs></defs><title>right_arrow</title><path class="cls-1" d="M766.22,442.74l-169,123c-19,12-29,5-31-16v-88h-459a31.16,31.16,0,0,1-31-31h0a31.16,31.16,0,0,1,31-31h459v-96c1-30,11-34,31-23l168,140C772.22,426.74,773.22,433.74,766.22,442.74Z" transform="translate(-76.22 -275.15)"></path></svg></i></a> 
+    </div>
+</div>
+<hr>
+{% else %}
+<div class="card mb-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <div class="home-1-card-img">
+                <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"> <img src="{{ fields.field_image.content}}" alt="{{ fields.field_image_1.content}}"></a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h6 class="card-title">{{fields.field_categories.content}}</h6> <a href="{{ fields.view_node.content}}" title="{{ fields.title.content }}"><h5>{{ fields.title.content }}</h5></a>
+                <p>{{fields.body_1.content}}</p>
+                <p class="card-text"><small class="text-muted">{{ fields.created.content }}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

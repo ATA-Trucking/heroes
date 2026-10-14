@@ -1,0 +1,44 @@
+<section class="sec-pad-b-70 sec-pad-t-80  wow fadeInUp search-result" data-wow-duration=".5s" data-wow-delay=".15s">
+  <div class="container"> 
+      <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-lg-6">
+              <form action="{{base_url}}/search/node" method="get">
+                  <div class="mb-3 input-group">  
+                    <input type="text" class="form-control" placeholder="Enter keyword" name="keys"> 
+                    <button type="submit" class="search-btn">
+                        <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.05 24.04"><title>search</title><path d="M17.74,16.33a10,10,0,1,0-1.41,1.41l6,6a1,1,0,0,0,1.41,0h0a1,1,0,0,0,0-1.41h0ZM10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18Z" transform="translate(0 0)"></path></svg></i>
+                    </button>
+                  </div>
+              </form>
+          </div>
+      </div> 
+  </div>
+</section>
+<section class="search-result" id="news-list-full-width">
+  <div class="container" id="featured-news">
+    <div class="col-12 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".15s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.15s;">
+        <div class="search-result-title">
+            <h2>We Found {{ total_items_count }} Search Result For "{{ keyword }}"</h2>
+        </div>
+    </div>
+    <div class="news-list-full-width">
+        <hr>
+    </div>
+    <div class="search-result-wapper">
+      <div class="wrapper region region-content">
+        {%- if title is not empty -%}
+          <h3>{{ title }}</h3>
+        {%- endif -%}
+        {%- if items -%}
+          <ol class="search-results node-results pl-0">
+              {%- for item in items -%}
+                  {{ item.value }}
+              {%- endfor -%}
+          </ol>
+        {%- else -%}
+          {{- empty -}}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
